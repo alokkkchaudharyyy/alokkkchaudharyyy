@@ -10,7 +10,8 @@
   <a href="https://nexeraofficial.in"><b>nexeraofficial.in</b></a>
   &nbsp;&middot;&nbsp;
   <a href="https://github.com/alokkkchaudharyyy?tab=repositories">Projects</a>
-  <!-- &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/YOUR-HANDLE">LinkedIn</a> -->
+  &nbsp;&middot;&nbsp;
+  <a href="https://www.linkedin.com/in/alokkchaudharyy">LinkedIn</a>
   <!-- &nbsp;&middot;&nbsp; <a href="https://x.com/YOUR-HANDLE">X</a> -->
   <!-- &nbsp;&middot;&nbsp; <a href="mailto:YOUR-EMAIL">Email</a> -->
 </p>
