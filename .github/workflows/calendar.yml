@@ -1,0 +1,41 @@
+name: Contribution calendar
+
+on:
+  schedule:
+    - cron: "30 18 * * *" # every day at 00:00 IST
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - tools/**
+      - .github/workflows/calendar.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: calendar
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Render calendar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/build_calendar.py ${{ github.repository_owner }}
+
+      - name: Commit if changed
+        run: |
+          git add metrics
+          if git diff --cached --quiet; then
+            echo "Calendar unchanged"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh contribution calendar"
+          git push

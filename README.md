@@ -52,17 +52,14 @@ I write code and I run a company. As the founder and CEO of [**NEXERA**](https:/
 
 ### Activity
 
-<p align="center">
-  <img alt="Isometric contribution calendar" src="./metrics/isocalendar.svg" width="80%">
-</p>
-
-<p>
-  <img alt="Most used languages" src="./metrics/languages.svg" width="49%" align="top">
-  <img alt="Coding habits" src="./metrics/habits.svg" width="49%" align="top">
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./metrics/calendar-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./metrics/calendar-light.svg">
+  <img alt="Isometric contribution calendar for the last year" src="./metrics/calendar-dark.svg" width="100%">
+</picture>
 
 <br>
 
 <p align="center">
-  <sub>Stats refresh daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a>. Thanks for stopping by.</sub>
+  <sub>The calendar redraws itself every night with GitHub Actions. Thanks for stopping by.</sub>
 </p>
