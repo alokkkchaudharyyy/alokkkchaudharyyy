@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="312" viewBox="0 0 1000 312" fill="none" role="img">
+<style>
+  .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
+  .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+  .c { animation: rise .8s cubic-bezier(.2,.8,.2,1) both; }
+  .f { animation: fade .9s ease-out both; }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<defs>
+  <clipPath id="card"><rect width="1000" height="312" rx="12"/></clipPath>
+  
+</defs>
+<rect x="0.5" y="0.5" width="999" height="311" rx="11.5" fill="#0d1117" stroke="#30363d"/>
+<g clip-path="url(#card)">
+
+<g class="f">
+  <circle cx="52" cy="71" r="4" fill="#3fb950"/>
+  <text x="66" y="76" class="mono" font-size="13" letter-spacing="2" fill="#6e7681">FOUNDER &amp; CEO</text>
+  <text x="45" y="136" class="sans" font-size="56" font-weight="800" letter-spacing="9" fill="#f0f6fc">NEXERA</text>
+  <text x="48" y="172" class="sans" font-size="20" fill="#9198a1">Shaping futures.</text>
+  <text class="sans" font-size="16" fill="#6e7681">
+    <tspan x="48" y="212">A student-driven ecosystem that brings education,</tspan>
+    <tspan x="48" y="236">events and community together. Home to IPUNEX.</tspan>
+  </text>
+  <text x="48" y="272" class="mono" font-size="14" fill="#3fb950">nexeraofficial.in &#8599;</text>
+</g>
+
+<g class="f" style="animation-delay:0.20s">
+  <rect x="520" y="52" width="432" height="64" rx="10" fill="#151b23" stroke="#30363d"/>
+  <g><polygon points="544.0,84.0 554.0,89.0 554.0,97.0 544.0,92.0" fill="#005728" stroke="#005728" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,89.0 564.0,84.0 564.0,92.0 554.0,97.0" fill="#004620" stroke="#004620" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,79.0 564.0,84.0 554.0,89.0 544.0,84.0" fill="#006d32" stroke="#006d32" stroke-width="0.6" stroke-linejoin="round"/></g>
+  <text x="588" y="80" class="sans" font-size="17" font-weight="600" fill="#f0f6fc">Education</text>
+  <text x="588" y="100" class="sans" font-size="14" fill="#6e7681">IPUNEX, structured learning and practice</text>
+  <text x="932" y="90" text-anchor="end" class="mono" font-size="12" fill="#6e7681">01</text>
+</g>
+<g class="f" style="animation-delay:0.30s">
+  <rect x="520" y="128" width="432" height="64" rx="10" fill="#151b23" stroke="#30363d"/>
+  <g><polygon points="544.0,164.0 554.0,169.0 554.0,177.0 544.0,172.0" fill="#005728" stroke="#005728" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,169.0 564.0,164.0 564.0,172.0 554.0,177.0" fill="#004620" stroke="#004620" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,159.0 564.0,164.0 554.0,169.0 544.0,164.0" fill="#006d32" stroke="#006d32" stroke-width="0.6" stroke-linejoin="round"/></g><g><polygon points="544.0,156.0 554.0,161.0 554.0,169.0 544.0,164.0" fill="#1e8534" stroke="#1e8534" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,161.0 564.0,156.0 564.0,164.0 554.0,169.0" fill="#186a2a" stroke="#186a2a" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,151.0 564.0,156.0 554.0,161.0 544.0,156.0" fill="#26a641" stroke="#26a641" stroke-width="0.6" stroke-linejoin="round"/></g>
+  <text x="588" y="156" class="sans" font-size="17" font-weight="600" fill="#f0f6fc">Events</text>
+  <text x="588" y="176" class="sans" font-size="14" fill="#6e7681">Tech events that bring builders together</text>
+  <text x="932" y="166" text-anchor="end" class="mono" font-size="12" fill="#6e7681">02</text>
+</g>
+<g class="f" style="animation-delay:0.40s">
+  <rect x="520" y="204" width="432" height="64" rx="10" fill="#151b23" stroke="#30363d"/>
+  <g><polygon points="544.0,244.0 554.0,249.0 554.0,257.0 544.0,252.0" fill="#005728" stroke="#005728" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,249.0 564.0,244.0 564.0,252.0 554.0,257.0" fill="#004620" stroke="#004620" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,239.0 564.0,244.0 554.0,249.0 544.0,244.0" fill="#006d32" stroke="#006d32" stroke-width="0.6" stroke-linejoin="round"/></g><g><polygon points="544.0,236.0 554.0,241.0 554.0,249.0 544.0,244.0" fill="#1e8534" stroke="#1e8534" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,241.0 564.0,236.0 564.0,244.0 554.0,249.0" fill="#186a2a" stroke="#186a2a" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,231.0 564.0,236.0 554.0,241.0 544.0,236.0" fill="#26a641" stroke="#26a641" stroke-width="0.6" stroke-linejoin="round"/></g><g><polygon points="544.0,228.0 554.0,233.0 554.0,241.0 544.0,236.0" fill="#2ea942" stroke="#2ea942" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,233.0 564.0,228.0 564.0,236.0 554.0,241.0" fill="#248735" stroke="#248735" stroke-width="0.6" stroke-linejoin="round"/><polygon points="554.0,223.0 564.0,228.0 554.0,233.0 544.0,228.0" fill="#39d353" stroke="#39d353" stroke-width="0.6" stroke-linejoin="round"/></g>
+  <text x="588" y="232" class="sans" font-size="17" font-weight="600" fill="#f0f6fc">Community</text>
+  <text x="588" y="252" class="sans" font-size="14" fill="#6e7681">Students learning and growing together</text>
+  <text x="932" y="242" text-anchor="end" class="mono" font-size="12" fill="#6e7681">03</text>
+</g>
+</g>
+</svg>

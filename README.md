@@ -1,0 +1,68 @@
+<a href="https://nexeraofficial.in">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.svg">
+    <img alt="Alok Chaudhary. Developer, Founder and CEO at NEXERA." src="./assets/banner-dark.svg" width="100%">
+  </picture>
+</a>
+
+<p align="center">
+  <a href="https://nexeraofficial.in"><b>nexeraofficial.in</b></a>
+  &nbsp;&middot;&nbsp;
+  <a href="https://github.com/alokkkchaudharyyy?tab=repositories">Projects</a>
+  <!-- &nbsp;&middot;&nbsp; <a href="https://www.linkedin.com/in/YOUR-HANDLE">LinkedIn</a> -->
+  <!-- &nbsp;&middot;&nbsp; <a href="https://x.com/YOUR-HANDLE">X</a> -->
+  <!-- &nbsp;&middot;&nbsp; <a href="mailto:YOUR-EMAIL">Email</a> -->
+</p>
+
+<br>
+
+### About
+
+I write code and I run a company. As the founder and CEO of [**NEXERA**](https://nexeraofficial.in), I lead the team building a student-driven ecosystem for education, events and community, and I still ship a good share of the code myself.
+
+- **Building:** NEXERA, end to end. A Next.js frontend, an Express and Prisma API on PostgreSQL and Redis, real-time features over Socket.IO, and a self-hosted code judge.
+- **Focus:** product engineering, systems that scale, and taking ideas from a whiteboard to production fast.
+- **Practicing:** data structures and algorithms in C++.
+- **Ask me about:** startups, edtech, Next.js and system design.
+
+<br>
+
+### Now building
+
+<a href="https://nexeraofficial.in">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="./assets/nexera-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="./assets/nexera-light.svg">
+    <img alt="NEXERA. Shaping futures. Education, events and community for students." src="./assets/nexera-dark.svg" width="100%">
+  </picture>
+</a>
+
+<br>
+
+### Toolkit
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./assets/stack-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./assets/stack-light.svg">
+  <img alt="TypeScript, JavaScript, C++, Python, SQL, Next.js, React, Tailwind CSS, Framer Motion, Three.js, GSAP, Node.js, Express, Prisma, PostgreSQL, Redis, Socket.IO, Docker, AWS, Vercel, PM2, Playwright, Vitest, Git" src="./assets/stack-dark.svg" width="100%">
+</picture>
+
+<br>
+
+### Activity
+
+<p align="center">
+  <img alt="Isometric contribution calendar" src="./metrics/isocalendar.svg" width="80%">
+</p>
+
+<p>
+  <img alt="Most used languages" src="./metrics/languages.svg" width="49%" align="top">
+  <img alt="Coding habits" src="./metrics/habits.svg" width="49%" align="top">
+</p>
+
+<br>
+
+<p align="center">
+  <sub>Stats refresh daily with <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a>. Thanks for stopping by.</sub>
+</p>

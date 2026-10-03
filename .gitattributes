@@ -1,0 +1,2 @@
+# keep the card generator out of the language stats
+tools/** linguist-vendored
