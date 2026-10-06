@@ -384,6 +384,8 @@
 <polygon points="745.0,428.0 758.0,434.5 745.0,441.0 732.0,434.5" fill="#1b2129" stroke="#0d1117" stroke-width="1.2"/>
 <polygon points="732.0,434.5 745.0,441.0 732.0,447.5 719.0,441.0" fill="#1b2129" stroke="#0d1117" stroke-width="1.2"/>
 <polygon points="823.0,402.0 836.0,408.5 823.0,415.0 810.0,408.5" fill="#1b2129" stroke="#0d1117" stroke-width="1.2"/>
+<polygon points="810.0,408.5 823.0,415.0 810.0,421.5 797.0,415.0" fill="#1b2129" stroke="#0d1117" stroke-width="1.2"/>
+<polygon points="797.0,415.0 810.0,421.5 797.0,428.0 784.0,421.5" fill="#1b2129" stroke="#0d1117" stroke-width="1.2"/>
 <g class="c" style="animation-delay:0.70s"><polygon points="435.3,228.6 446.0,234.0 446.0,251.3 435.3,246.0" fill="#145625" stroke="#145625" stroke-width="0.6" stroke-linejoin="round"/><polygon points="446.0,234.0 456.7,228.6 456.7,246.0 446.0,251.3" fill="#10451d" stroke="#10451d" stroke-width="0.6" stroke-linejoin="round"/><polygon points="446.0,223.3 456.7,228.6 446.0,234.0 435.3,228.6" fill="#196c2e" stroke="#196c2e" stroke-width="0.6" stroke-linejoin="round"/></g>
 <g class="c" style="animation-delay:0.66s"><polygon points="357.3,245.9 368.0,251.2 368.0,264.3 357.3,259.0" fill="#145625" stroke="#145625" stroke-width="0.6" stroke-linejoin="round"/><polygon points="368.0,251.2 378.7,245.9 378.7,259.0 368.0,264.3" fill="#10451d" stroke="#10451d" stroke-width="0.6" stroke-linejoin="round"/><polygon points="368.0,240.5 378.7,245.9 368.0,251.2 357.3,245.9" fill="#196c2e" stroke="#196c2e" stroke-width="0.6" stroke-linejoin="round"/></g>
 <g class="c" style="animation-delay:0.74s"><polygon points="461.3,241.6 472.0,247.0 472.0,264.3 461.3,259.0" fill="#145625" stroke="#145625" stroke-width="0.6" stroke-linejoin="round"/><polygon points="472.0,247.0 482.7,241.6 482.7,259.0 472.0,264.3" fill="#10451d" stroke="#10451d" stroke-width="0.6" stroke-linejoin="round"/><polygon points="472.0,236.3 482.7,241.6 472.0,247.0 461.3,241.6" fill="#196c2e" stroke="#196c2e" stroke-width="0.6" stroke-linejoin="round"/></g>
@@ -412,7 +414,7 @@
   <text x="666" y="128" class="sans" font-size="48" font-weight="700" letter-spacing="-1" fill="#f0f6fc">85</text>
   <text x="668" y="156" class="sans" font-size="16" fill="#6e7681">in the last year</text>
   <line x1="668" x2="952" y1="176.5" y2="176.5" stroke="#30363d"/>
-  <text x="668" y="204" class="sans" font-size="15" fill="#9198a1">Current streak</text><text x="952" y="204" text-anchor="end" class="mono" font-size="14" fill="#f0f6fc">3 days</text>
+  <text x="668" y="204" class="sans" font-size="15" fill="#9198a1">Current streak</text><text x="952" y="204" text-anchor="end" class="mono" font-size="14" fill="#f0f6fc">0 days</text>
 <text x="668" y="232" class="sans" font-size="15" fill="#9198a1">Longest streak</text><text x="952" y="232" text-anchor="end" class="mono" font-size="14" fill="#f0f6fc">4 days</text>
 <text x="668" y="260" class="sans" font-size="15" fill="#9198a1">Best day</text><text x="952" y="260" text-anchor="end" class="mono" font-size="14" fill="#f0f6fc">22 on Oct 3</text>
 </g>
