@@ -1,27 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="400" viewBox="0 0 1000 400" fill="none" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="360" viewBox="0 0 1000 360" fill="none" role="img">
 <style>
   .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
   .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
   .in { animation: fadein .8s cubic-bezier(.2,.8,.2,1) both; }
   .rise { animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
   .blink { animation: blink 1s steps(1) infinite; }
-  .pulse { animation: pulse 2s ease-in-out infinite; }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; }
   .ping { animation: ping 2.2s cubic-bezier(0,0,.2,1) infinite; transform-box: fill-box; transform-origin: center; }
   .bob { animation: bob 6s ease-in-out infinite; }
   .twinkle { animation: twinkle 3s ease-in-out infinite; }
+  .drift { animation: drift linear infinite; }
   @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
   @keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
   @keyframes blink { 50% { opacity: 0; } }
-  @keyframes pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
+  @keyframes pulse { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
   @keyframes ping { 0% { transform: scale(1); opacity: .7; } 80%, 100% { transform: scale(3); opacity: 0; } }
   @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
   @keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .9; } }
+  @keyframes drift { from { transform: translateX(0); } to { transform: translateX(var(--d, -200px)); } }
   @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
 </style>
 <defs>
-  <linearGradient id="cardbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1118"/><stop offset="1" stop-color="#04070b"/></linearGradient>
-  <linearGradient id="cometg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2dd4bf"/><stop offset="1" stop-color="#39d353"/></linearGradient>
-  <clipPath id="clip"><rect width="1000" height="400" rx="16"/></clipPath>
+  <linearGradient id="cardbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c0f17"/><stop offset="1" stop-color="#05060a"/></linearGradient>
+  <linearGradient id="cometg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#6366f1"/><stop offset="1" stop-color="#0be5ba"/></linearGradient>
+  <clipPath id="clip"><rect width="1000" height="360" rx="16"/></clipPath>
   
   <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="5" result="b"/>
@@ -29,59 +31,49 @@
   </filter>
   <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
   
-  <linearGradient id="word" x1="0" y1="0" x2="1" y2="0" gradientUnits="objectBoundingBox">
-    <stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#39d353"/><stop offset="1" stop-color="#ffffff"/>
-    <animateTransform attributeName="gradientTransform" type="translate" values="-1 0;1 0" dur="5s" repeatCount="indefinite"/>
-  </linearGradient>
-  <radialGradient id="nglow" cx="260" cy="190" r="320" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#39d353" stop-opacity=".13"/><stop offset="1" stop-color="#39d353" stop-opacity="0"/></radialGradient>
+  <clipPath id="orb"><circle cx="88" cy="118" r="40"/></clipPath>
+  <radialGradient id="nglow" cx="200" cy="120" r="380" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6366f1" stop-opacity=".22"/><stop offset="1" stop-color="#6366f1" stop-opacity="0"/></radialGradient>
+  <linearGradient id="word" x1="0" x2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c7c8ff"/></linearGradient>
 </defs>
-<rect x="0.5" y="0.5" width="999" height="399" rx="16" fill="url(#cardbg)" stroke="#1b2a26"/><path d="M14 32 V14 H32" stroke="#39d353" stroke-opacity=".55" stroke-width="1.5"/><path d="M986 32 V14 H968" stroke="#39d353" stroke-opacity=".55" stroke-width="1.5"/><path d="M14 368 V386 H32" stroke="#39d353" stroke-opacity=".55" stroke-width="1.5"/><path d="M986 368 V386 H968" stroke="#39d353" stroke-opacity=".55" stroke-width="1.5"/><rect x="1" y="1" width="998" height="398" rx="16" pathLength="1000" fill="none" stroke="url(#cometg)" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 860" filter="url(#glow)"><animate attributeName="stroke-dashoffset" from="1000" to="0" dur="7s" repeatCount="indefinite"/></rect><g class="in"><text x="40" y="52" class="mono" font-size="13" letter-spacing="3" fill="#5b6875"><tspan fill="#39d353">[ 02 ]</tspan>  NOW BUILDING</text></g>
+<rect x="0.5" y="0.5" width="999" height="359" rx="16" fill="url(#cardbg)" stroke="#1f2433"/><path d="M14 32 V14 H32" stroke="#6366f1" stroke-opacity=".6" stroke-width="1.5"/><path d="M986 32 V14 H968" stroke="#6366f1" stroke-opacity=".6" stroke-width="1.5"/><path d="M14 328 V346 H32" stroke="#6366f1" stroke-opacity=".6" stroke-width="1.5"/><path d="M986 328 V346 H968" stroke="#6366f1" stroke-opacity=".6" stroke-width="1.5"/><rect x="1" y="1" width="998" height="358" rx="16" pathLength="1000" fill="none" stroke="url(#cometg)" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 860" filter="url(#glow)"><animate attributeName="stroke-dashoffset" from="1000" to="0" dur="7s" repeatCount="indefinite"/></rect><g class="in"><text x="40" y="52" class="mono" font-size="13" letter-spacing="3" fill="#5f6b7d"><tspan fill="#6366f1">[ 03 ]</tspan>  COMPANY</text></g>
 <g clip-path="url(#clip)">
 
-<rect width="1000" height="400" fill="url(#nglow)"/>
+<rect width="1000" height="360" fill="url(#nglow)"/>
 <g class="in" style="animation-delay:.1s">
-  <rect x="48" y="90" width="170" height="30" rx="15" fill="#39d353" fill-opacity=".1" stroke="#39d353" stroke-opacity=".45"/>
-  <circle cx="66" cy="105" r="4" fill="#39d353"/><circle cx="66" cy="105" r="4" fill="#39d353" class="ping"/>
-  <text x="80" y="110" class="mono" font-size="12.5" letter-spacing="2" fill="#39d353">FOUNDER &amp; CEO</text>
-</g>
-<g class="in" style="animation-delay:.2s">
-  <text x="44" y="200" class="sans" font-size="86" font-weight="900" letter-spacing="14" fill="#39d353" opacity=".45" filter="url(#soft)">NEXERA</text>
-  <text x="44" y="200" class="sans" font-size="86" font-weight="900" letter-spacing="14" fill="url(#word)">NEXERA</text>
-  <text x="48" y="242" class="sans" font-size="24" font-weight="300" fill="#e6edf3">Shaping futures.</text>
-  <text class="sans" font-size="16" fill="#93a1ad">
-    <tspan x="48" y="284">A student-driven ecosystem that brings education,</tspan>
-    <tspan x="48" y="308">events and community together. Home to IPUNEX.</tspan>
+  <circle cx="88" cy="118" r="52" fill="#6366f1" opacity=".35" filter="url(#soft)" class="pulse"/>
+  <image x="48" y="78" width="80" height="80" clip-path="url(#orb)" href="data:image/jpeg;base64,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" xlink:href="data:image/jpeg;base64,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"/>
+  <circle cx="88" cy="118" r="40" stroke="#0be5ba" stroke-opacity=".6" stroke-width="1.5"/>
+  <text x="152" y="114" class="sans" font-size="44" font-weight="900" letter-spacing="8" fill="url(#word)">NEXERA</text>
+  <text x="154" y="142" class="mono" font-size="12.5" letter-spacing="2" fill="#0be5ba">MY STARTUP · FOUNDER &amp; CEO</text>
+  <text x="48" y="204" class="sans" font-size="22" font-weight="300" fill="#eef2f8">Shaping futures.</text>
+  <text class="sans" font-size="15.5" fill="#9aa4b5">
+    <tspan x="48" y="240">A student-driven ecosystem that brings education,</tspan>
+    <tspan x="48" y="263">events and community together for college students.</tspan>
   </text>
-  <rect x="48" y="332" width="206" height="36" rx="18" fill="#39d353"/>
-  <text x="151" y="355" text-anchor="middle" class="mono" font-size="14" font-weight="700" fill="#04140a">nexeraofficial.in &#8599;</text>
+  <rect x="48" y="290" width="206" height="36" rx="18" fill="#6366f1"/>
+  <text x="151" y="313" text-anchor="middle" class="mono" font-size="14" font-weight="700" fill="#fff">nexeraofficial.in &#8599;</text>
 </g>
 
 <g class="in" style="animation-delay:0.35s">
-  <rect x="548" y="92" width="404" height="80" rx="12" fill="#0a1510" stroke="#1f6f33" stroke-opacity=".8"/>
-  <rect x="548" y="110" width="3" height="44" rx="1.5" fill="#39d353" filter="url(#glow)"/>
-  <rect x="570" y="110" width="44" height="44" rx="10" fill="#39d353" fill-opacity=".1" stroke="#39d353" stroke-opacity=".35"/>
-  <g transform="translate(580 120)"><path d="M3 5.5c3-1.6 6.3-1.6 9 .5 2.7-2.1 6-2.1 9-.5V19c-3-1.4-6.3-1.4-9 .6-2.7-2-6-2-9-.6Z M12 6v13.6" stroke="#39d353" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <text x="632" y="128" class="sans" font-size="19" font-weight="700" fill="#e6edf3">Education</text>
-  <text x="632" y="151" class="sans" font-size="14.5" fill="#93a1ad">IPUNEX: structured learning and practice</text>
-  <text x="930" y="128" text-anchor="end" class="mono" font-size="12" fill="#39d353" opacity=".7">01</text>
+  <rect x="548" y="80" width="404" height="72" rx="12" fill="#0d0e1f" stroke="#6366f1" stroke-opacity=".45"/>
+  <rect x="568" y="94" width="44" height="44" rx="10" fill="#0be5ba" fill-opacity=".1" stroke="#0be5ba" stroke-opacity=".4"/>
+  <g transform="translate(578 104)"><path d="M3 5.5c3-1.6 6.3-1.6 9 .5 2.7-2.1 6-2.1 9-.5V19c-3-1.4-6.3-1.4-9 .6-2.7-2-6-2-9-.6Z M12 6v13.6" stroke="#0be5ba" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="630" y="112" class="sans" font-size="18" font-weight="700" fill="#eef2f8">Education</text>
+  <text x="630" y="134" class="sans" font-size="14" fill="#9aa4b5">IPUNEX notes, PYQs, courses and SkillX</text>
 </g>
 <g class="in" style="animation-delay:0.47s">
-  <rect x="548" y="188" width="404" height="80" rx="12" fill="#0a1510" stroke="#1f6f33" stroke-opacity=".8"/>
-  <rect x="548" y="206" width="3" height="44" rx="1.5" fill="#39d353" filter="url(#glow)"/>
-  <rect x="570" y="206" width="44" height="44" rx="10" fill="#39d353" fill-opacity=".1" stroke="#39d353" stroke-opacity=".35"/>
-  <g transform="translate(580 216)"><path d="M13.5 2 4.5 13.5H11L10 22l9.5-12H13Z" stroke="#39d353" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <text x="632" y="224" class="sans" font-size="19" font-weight="700" fill="#e6edf3">Events</text>
-  <text x="632" y="247" class="sans" font-size="14.5" fill="#93a1ad">Tech events that bring builders together</text>
-  <text x="930" y="224" text-anchor="end" class="mono" font-size="12" fill="#39d353" opacity=".7">02</text>
+  <rect x="548" y="166" width="404" height="72" rx="12" fill="#0d0e1f" stroke="#6366f1" stroke-opacity=".45"/>
+  <rect x="568" y="180" width="44" height="44" rx="10" fill="#0be5ba" fill-opacity=".1" stroke="#0be5ba" stroke-opacity=".4"/>
+  <g transform="translate(578 190)"><path d="M13.5 2 4.5 13.5H11L10 22l9.5-12H13Z" stroke="#0be5ba" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="630" y="198" class="sans" font-size="18" font-weight="700" fill="#eef2f8">Events</text>
+  <text x="630" y="220" class="sans" font-size="14" fill="#9aa4b5">Tech events that bring builders together</text>
 </g>
 <g class="in" style="animation-delay:0.59s">
-  <rect x="548" y="284" width="404" height="80" rx="12" fill="#0a1510" stroke="#1f6f33" stroke-opacity=".8"/>
-  <rect x="548" y="302" width="3" height="44" rx="1.5" fill="#39d353" filter="url(#glow)"/>
-  <rect x="570" y="302" width="44" height="44" rx="10" fill="#39d353" fill-opacity=".1" stroke="#39d353" stroke-opacity=".35"/>
-  <g transform="translate(580 312)"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z M2 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5 M17 3.5a3.5 3.5 0 0 1 0 7 M19 14.5c2 .6 3.5 2.6 3.5 6" stroke="#39d353" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
-  <text x="632" y="320" class="sans" font-size="19" font-weight="700" fill="#e6edf3">Community</text>
-  <text x="632" y="343" class="sans" font-size="14.5" fill="#93a1ad">Students learning and growing together</text>
-  <text x="930" y="320" text-anchor="end" class="mono" font-size="12" fill="#39d353" opacity=".7">03</text>
+  <rect x="548" y="252" width="404" height="72" rx="12" fill="#0d0e1f" stroke="#6366f1" stroke-opacity=".45"/>
+  <rect x="568" y="266" width="44" height="44" rx="10" fill="#0be5ba" fill-opacity=".1" stroke="#0be5ba" stroke-opacity=".4"/>
+  <g transform="translate(578 276)"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z M2 21c0-4 3-6.5 7-6.5s7 2.5 7 6.5 M17 3.5a3.5 3.5 0 0 1 0 7 M19 14.5c2 .6 3.5 2.6 3.5 6" stroke="#0be5ba" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <text x="630" y="284" class="sans" font-size="18" font-weight="700" fill="#eef2f8">Community</text>
+  <text x="630" y="306" class="sans" font-size="14" fill="#9aa4b5">Students learning and growing together</text>
 </g>
 </g>
 </svg>

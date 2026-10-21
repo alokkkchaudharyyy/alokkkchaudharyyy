@@ -23,7 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Terminal and contribution city
+      - name: Terminal, contribution city and live project stats
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 tools/profile.py live ${{ github.repository_owner }}
@@ -33,8 +33,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            metrics/snake-dark.svg?palette=github-dark&color_snake=#39d353&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
-            metrics/snake-light.svg?palette=github&color_snake=#1a7f37
+            metrics/snake-dark.svg?palette=github-dark&color_snake=#fbbf24&color_dots=#161b22,#155e75,#0891b2,#22d3ee,#f472b6
+            metrics/snake-light.svg?palette=github&color_snake=#db2777&color_dots=#ebedf0,#a5f3fc,#22d3ee,#0891b2,#db2777
 
       - name: Commit if changed
         run: |
