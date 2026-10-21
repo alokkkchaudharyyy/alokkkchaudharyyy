@@ -40,8 +40,5 @@
 
 <img src="./assets/footer.svg" width="100%" alt="Thanks for stopping by. Let's build something that matters.">
 
-<br>
-
-<img src="https://komarev.com/ghpvc/?username=alokkkchaudharyyy&style=flat-square&color=39d353&label=PROFILE+VIEWS" alt="Profile views">
 
 </div>
