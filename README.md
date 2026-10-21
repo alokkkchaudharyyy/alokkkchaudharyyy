@@ -1,66 +1,47 @@
-<a href="https://nexeraofficial.in">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/banner-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/banner-light.svg">
-    <img alt="Alok Chaudhary. Developer, Founder and CEO at NEXERA." src="./assets/banner-dark.svg" width="100%">
-  </picture>
-</a>
+<div align="center">
 
-<p align="center">
-  <a href="https://nexeraofficial.in"><b>nexeraofficial.in</b></a>
-  &nbsp;&middot;&nbsp;
-  <a href="https://github.com/alokkkchaudharyyy?tab=repositories">Projects</a>
-  &nbsp;&middot;&nbsp;
-  <a href="https://www.linkedin.com/in/alokkchaudharyy">LinkedIn</a>
-  <!-- &nbsp;&middot;&nbsp; <a href="https://x.com/YOUR-HANDLE">X</a> -->
-  <!-- &nbsp;&middot;&nbsp; <a href="mailto:YOUR-EMAIL">Email</a> -->
-</p>
+<a href="https://nexeraofficial.in"><img src="./assets/hero.svg" width="100%" alt="Alok Chaudhary. Full-stack developer, Founder and CEO at NEXERA."></a>
 
 <br>
 
-### About
-
-I write code and I run a company. As the founder and CEO of [**NEXERA**](https://nexeraofficial.in), I lead the team building a student-driven ecosystem for education, events and community, and I still ship a good share of the code myself.
-
-- **Building:** NEXERA, end to end. A Next.js frontend, an Express and Prisma API on PostgreSQL and Redis, real-time features over Socket.IO, and a self-hosted code judge.
-- **Focus:** product engineering, systems that scale, and taking ideas from a whiteboard to production fast.
-- **Practicing:** data structures and algorithms in C++.
-- **Ask me about:** startups, edtech, Next.js and system design.
+<a href="https://nexeraofficial.in"><img src="./assets/btn-website.svg" height="46" alt="nexeraofficial.in"></a>&nbsp;
+<a href="https://www.linkedin.com/in/alokkchaudharyy"><img src="./assets/btn-linkedin.svg" height="46" alt="LinkedIn"></a>&nbsp;
+<a href="https://github.com/alokkkchaudharyyy?tab=repositories"><img src="./assets/btn-projects.svg" height="46" alt="Projects"></a>
 
 <br>
 
-### Now building
-
-<a href="https://nexeraofficial.in">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="./assets/nexera-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="./assets/nexera-light.svg">
-    <img alt="NEXERA. Shaping futures. Education, events and community for students." src="./assets/nexera-dark.svg" width="100%">
-  </picture>
-</a>
+<img src="./metrics/terminal.svg" width="100%" alt="whoami: Developer, Founder and CEO at NEXERA. Live GitHub stats.">
 
 <br>
 
-### Toolkit
+<a href="https://nexeraofficial.in"><img src="./assets/nexera.svg" width="100%" alt="NEXERA. Shaping futures. Education, events and community for students."></a>
+
+<br>
+
+<img src="./assets/header-stack.svg" width="100%" alt="Tech arsenal">
+
+<img src="https://skillicons.dev/icons?i=ts,js,dart,cpp,py,flutter,react,nextjs,nodejs,express,prisma,postgres,redis,supabase,tailwind,threejs,vite,docker,aws,vercel,githubactions,linux,git,figma&perline=12&theme=dark" width="92%" alt="TypeScript, JavaScript, Dart, C++, Python, Flutter, React, Next.js, Node.js, Express, Prisma, PostgreSQL, Redis, Supabase, Tailwind CSS, Three.js, Vite, Docker, AWS, Vercel, GitHub Actions, Linux, Git, Figma">
+
+<br>
+
+<img src="./metrics/city.svg" width="100%" alt="Contribution city: the last year of contributions as an isometric skyline.">
+
+<br>
+
+<img src="./assets/header-snake.svg" width="100%" alt="Commit snake">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./assets/stack-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./assets/stack-light.svg">
-  <img alt="TypeScript, JavaScript, C++, Python, SQL, Next.js, React, Tailwind CSS, Framer Motion, Three.js, GSAP, Node.js, Express, Prisma, PostgreSQL, Redis, Socket.IO, Docker, AWS, Vercel, PM2, Playwright, Vitest, Git" src="./assets/stack-dark.svg" width="100%">
+  <source media="(prefers-color-scheme: dark)" srcset="./metrics/snake-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="./metrics/snake-light.svg">
+  <img src="./metrics/snake-dark.svg" width="100%" alt="A snake eating the contribution graph">
 </picture>
 
 <br>
 
-### Activity
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./metrics/calendar-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="./metrics/calendar-light.svg">
-  <img alt="Isometric contribution calendar for the last year" src="./metrics/calendar-dark.svg" width="100%">
-</picture>
+<img src="./assets/footer.svg" width="100%" alt="Thanks for stopping by. Let's build something that matters.">
 
 <br>
 
-<p align="center">
-  <sub>The calendar redraws itself every night with GitHub Actions. Thanks for stopping by.</sub>
-</p>
+<img src="https://komarev.com/ghpvc/?username=alokkkchaudharyyy&style=flat-square&color=39d353&label=PROFILE+VIEWS" alt="Profile views">
+
+</div>

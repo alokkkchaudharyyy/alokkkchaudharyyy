@@ -1,4 +1,4 @@
-name: Contribution calendar
+name: Live profile
 
 on:
   schedule:
@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: calendar
+  group: live-profile
   cancel-in-progress: false
 
 jobs:
@@ -23,19 +23,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Render calendar
+      - name: Terminal and contribution city
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python3 tools/build_calendar.py ${{ github.repository_owner }}
+        run: python3 tools/profile.py live ${{ github.repository_owner }}
+
+      - name: Commit snake
+        uses: Platane/snk/svg-only@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            metrics/snake-dark.svg?palette=github-dark&color_snake=#39d353&color_dots=#161b22,#0e4429,#006d32,#26a641,#39d353
+            metrics/snake-light.svg?palette=github&color_snake=#1a7f37
 
       - name: Commit if changed
         run: |
           git add metrics
           if git diff --cached --quiet; then
-            echo "Calendar unchanged"
+            echo "Nothing changed"
             exit 0
           fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Refresh contribution calendar"
+          git commit -m "Refresh live profile"
           git push
