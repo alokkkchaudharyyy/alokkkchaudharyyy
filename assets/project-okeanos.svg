@@ -53,14 +53,16 @@
   </g>
 </g>
 <g class="in">
-  <rect x="28" y="28" width="133" height="24" rx="12" fill="#38bdf8" fill-opacity=".14" stroke="#38bdf8" stroke-opacity=".5"/>
+  <rect x="28" y="28" width="158" height="24" rx="12" fill="#38bdf8" fill-opacity=".14" stroke="#38bdf8" stroke-opacity=".5"/>
   <circle cx="41" cy="40" r="3.5" fill="#38bdf8" class="pulse"/>
   <text x="51" y="44" class="mono" font-size="11" letter-spacing="1.5" fill="#38bdf8">SIH 2026 · TEAM</text>
 </g>
 <g class="in" style="animation-delay:.15s">
-  <text x="28" y="212" class="sans" font-size="28" font-weight="800" letter-spacing="-.5" fill="#eef2f8">Okeanos</text>
-  <text class="sans" font-size="14.5" fill="#9aa4b5"><tspan x="28" y="238">Rebuilds the North Indian Ocean's temperature</tspan><tspan x="28" y="259">down to 1000 m from satellite surface data alone.</tspan></text>
-  <rect x="28.0" y="280" width="65.2" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="39.0" y="296" class="mono" font-size="12" fill="#38bdf8">Python</text><rect x="101.2" y="280" width="72.4" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="112.2" y="296" class="mono" font-size="12" fill="#38bdf8">PyTorch</text><rect x="181.6" y="280" width="72.4" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="192.6" y="296" class="mono" font-size="12" fill="#38bdf8">XGBoost</text>
+  <text x="27" y="112" class="sans" font-size="30" font-weight="800" letter-spacing="-.5" fill="#eef2f8">Okeanos</text>
+  <rect x="28" y="126" width="36" height="3" rx="1.5" fill="#38bdf8"/>
+  <text x="28" y="154" class="mono" font-size="12" letter-spacing="1" fill="#5f6b7d">SIH26066 · MoES</text>
+  <text class="sans" font-size="14.5" fill="#9aa4b5"><tspan x="28" y="206">Rebuilds the North Indian Ocean's temperature</tspan><tspan x="28" y="228">down to 1000 m from satellite surface data alone.</tspan></text>
+  <rect x="28.0" y="268" width="65.2" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="39.0" y="284" class="mono" font-size="12" fill="#38bdf8">Python</text><rect x="101.2" y="268" width="72.4" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="112.2" y="284" class="mono" font-size="12" fill="#38bdf8">PyTorch</text><rect x="181.6" y="268" width="72.4" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="192.6" y="284" class="mono" font-size="12" fill="#38bdf8">XGBoost</text>
   
   
 </g>

@@ -304,21 +304,27 @@ def hero():
 
 # ------------------------------------------------------------------ project tiles
 
-def tile(w, h, accent, tag, title, desc, stack, motif, stat="", link=True, defs="", css=""):
-    lines = "".join(f'<tspan x="28" y="{h - 92 + k * 21}">{esc(t)}</tspan>' for k, t in enumerate(desc))
+def pill_width(text, fs=11, spacing=1.5):
+    return 23 + len(text) * (fs * CW + spacing) + 14
+
+
+def tile(w, h, accent, tag, title, meta, desc, stack, motif, stat="", link=True, defs="", css=""):
+    lines = "".join(f'<tspan x="28" y="{206 + k * 22}">{esc(t)}</tspan>' for k, t in enumerate(desc))
     body = f"""
 <rect width="{w}" height="{h}" fill="url(#tglow)"/>
 {motif}
 <g class="in">
-  <rect x="28" y="28" width="{len(tag) * 11 * CW + 34:.0f}" height="24" rx="12" fill="{accent}" fill-opacity=".14" stroke="{accent}" stroke-opacity=".5"/>
+  <rect x="28" y="28" width="{pill_width(tag):.0f}" height="24" rx="12" fill="{accent}" fill-opacity=".14" stroke="{accent}" stroke-opacity=".5"/>
   <circle cx="41" cy="40" r="3.5" fill="{accent}" class="pulse"/>
   <text x="51" y="44" class="mono" font-size="11" letter-spacing="1.5" fill="{accent}">{esc(tag)}</text>
 </g>
 <g class="in" style="animation-delay:.15s">
-  <text x="28" y="{h - 118}" class="sans" font-size="28" font-weight="800" letter-spacing="-.5" fill="{FG}">{esc(title)}</text>
+  <text x="27" y="112" class="sans" font-size="30" font-weight="800" letter-spacing="-.5" fill="{FG}">{esc(title)}</text>
+  <rect x="28" y="126" width="36" height="3" rx="1.5" fill="{accent}"/>
+  <text x="28" y="154" class="mono" font-size="12" letter-spacing="1" fill="{FG3}">{esc(meta)}</text>
   <text class="sans" font-size="14.5" fill="{FG2}">{lines}</text>
-  {chips(28, h - 50, stack, accent)}
-  {f'<text x="{w - 28}" y="{h - 33}" text-anchor="end" class="mono" font-size="12.5" fill="{FG}">{esc(stat)}</text>' if stat else ''}
+  {chips(28, h - 62, stack, accent)}
+  {f'<text x="{w - 28}" y="{h - 45}" text-anchor="end" class="mono" font-size="12.5" fill="{FG}">{esc(stat)}</text>' if stat else ''}
   {f'<text x="{w - 28}" y="44" text-anchor="end" class="mono" font-size="16" fill="{accent}">&#8599;</text>' if link else ''}
 </g>"""
     tglow = f'<radialGradient id="tglow" cx="{w * .8:.0f}" cy="40" r="{w * .7:.0f}" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="{accent}" stop-opacity=".16"/><stop offset="1" stop-color="{accent}" stop-opacity="0"/></radialGradient>'
@@ -374,7 +380,7 @@ def portfolio_tile():
 <rect width="{W}" height="{H}" fill="url(#tglow)"/>
 {motif}
 <g class="in">
-  <rect x="40" y="40" width="{len(body_tag) * 11 * CW + 34:.0f}" height="24" rx="12" fill="{ORANGE}" fill-opacity=".14" stroke="{ORANGE}" stroke-opacity=".5"/>
+  <rect x="40" y="40" width="{pill_width(body_tag):.0f}" height="24" rx="12" fill="{ORANGE}" fill-opacity=".14" stroke="{ORANGE}" stroke-opacity=".5"/>
   <circle cx="53" cy="52" r="3.5" fill="{ORANGE}" class="pulse"/>
   <text x="63" y="56" class="mono" font-size="11" letter-spacing="1.5" fill="{ORANGE}">{esc(body_tag)}</text>
   <text x="38" y="138" class="sans" font-size="44" font-weight="800" letter-spacing="-1" fill="url(#ptitle)">World of Alok</text>
@@ -416,7 +422,7 @@ def agent_bridge_tile(version="", installs=None):
   {packets}{acks}
 </g>"""
     stat = f"v{version} · {installs:,} installs" if installs else ""
-    return tile(490, 330, a, "VS CODE EXTENSION", "Agent Bridge",
+    return tile(490, 330, a, "VS CODE EXTENSION", "Agent Bridge", "Open VSX · MIT",
                 ["Lets Claude Code or any AI agent hand tasks to", "your IDE's AI chat, and know when they're done."],
                 ["JavaScript", "VS Code API"], motif, stat)
 
@@ -439,7 +445,7 @@ def nexera_app_tile():
   </g>
 </g>
 <ellipse cx="370" cy="196" rx="60" ry="8" fill="{a}" opacity=".2" filter="url(#soft)"/>"""
-    return tile(490, 330, a, "FLUTTER · ANDROID", "Nexera App",
+    return tile(490, 330, a, "FLUTTER · ANDROID", "Nexera App", "Google Play · APK",
                 ["The NEXERA mobile app: IPUNEX notes and PYQs,", "video courses, SkillX DSA practice and doubts."],
                 ["Flutter", "Dart", "Android"], motif)
 
@@ -472,7 +478,7 @@ def okeanos_tile():
     <path d="M{x0 + 106} 38 L{x0 + 80} {y0 - 2} M{x0 + 106} 38 L{x0 + 132} {y0 - 2}" stroke="{a}" stroke-opacity=".5" stroke-dasharray="2 3" class="pulse"/>
   </g>
 </g>"""
-    return tile(490, 330, a, "SIH 2026 · TEAM", "Okeanos",
+    return tile(490, 330, a, "SIH 2026 · TEAM", "Okeanos", "SIH26066 · MoES",
                 ["Rebuilds the North Indian Ocean's temperature", "down to 1000 m from satellite surface data alone."],
                 ["Python", "PyTorch", "XGBoost"], motif, link=False)
 
@@ -493,7 +499,7 @@ def netwm_tile():
         for k, (i, j) in enumerate([(0, 1), (2, 3), (3, 5), (4, 6)])
     )
     motif = f'<g class="in" style="animation-delay:.2s">{lines}{flow}{dots}</g>'
-    return tile(490, 330, a, "SIH 2026 · TEAM", "NetWM",
+    return tile(490, 330, a, "SIH 2026 · TEAM", "NetWM", "PS 26153 · NTRO",
                 ["Forecasts network attacks 5 minutes ahead with a", "world model. PR-AUC 0.677 vs 0.139 baseline."],
                 ["Python", "PyTorch", "FastAPI"], motif)
 

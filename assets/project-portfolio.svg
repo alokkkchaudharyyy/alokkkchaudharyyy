@@ -55,7 +55,7 @@
   <rect x="520" y="24" width="452" height="272" rx="14" stroke="#fb923c" stroke-opacity=".35"/>
 </g>
 <g class="in">
-  <rect x="40" y="40" width="159" height="24" rx="12" fill="#fb923c" fill-opacity=".14" stroke="#fb923c" stroke-opacity=".5"/>
+  <rect x="40" y="40" width="191" height="24" rx="12" fill="#fb923c" fill-opacity=".14" stroke="#fb923c" stroke-opacity=".5"/>
   <circle cx="53" cy="52" r="3.5" fill="#fb923c" class="pulse"/>
   <text x="63" y="56" class="mono" font-size="11" letter-spacing="1.5" fill="#fb923c">LIVE · 3D PORTFOLIO</text>
   <text x="38" y="138" class="sans" font-size="44" font-weight="800" letter-spacing="-1" fill="url(#ptitle)">World of Alok</text>
