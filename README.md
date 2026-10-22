@@ -1,10 +1,10 @@
 <div align="center">
 
-<a href="https://portfolio-chi-azure-35.vercel.app"><img src="./assets/hero.svg" width="100%" alt="Alok Chaudhary. Full-stack developer, Founder and CEO at NEXERA."></a>
+<a href="https://alokchaudhary.me"><img src="./assets/hero.svg" width="100%" alt="Alok Chaudhary. Full-stack developer, Founder and CEO at NEXERA."></a>
 
 <br>
 
-<a href="https://portfolio-chi-azure-35.vercel.app"><img src="./assets/btn-portfolio.svg" height="46" alt="Portfolio"></a>&nbsp;
+<a href="https://alokchaudhary.me"><img src="./assets/btn-portfolio.svg" height="46" alt="Portfolio"></a>&nbsp;
 <a href="https://www.linkedin.com/in/alokkchaudharyy"><img src="./assets/btn-linkedin.svg" height="46" alt="LinkedIn"></a>&nbsp;
 <a href="mailto:alokchaudhary@nexeraofficial.in"><img src="./assets/btn-email.svg" height="46" alt="Email alokchaudhary@nexeraofficial.in"></a>&nbsp;
 <a href="https://nexeraofficial.in"><img src="./assets/btn-nexera.svg" height="46" alt="NEXERA"></a>
@@ -17,7 +17,7 @@
 
 <img src="./assets/header-projects.svg" width="100%" alt="Projects">
 
-<a href="https://portfolio-chi-azure-35.vercel.app"><img src="./assets/project-portfolio.svg" width="100%" alt="World of Alok: my portfolio as an explorable 3D world."></a>
+<a href="https://alokchaudhary.me"><img src="./assets/project-portfolio.svg" width="100%" alt="World of Alok: my portfolio as an explorable 3D world."></a>
 
 <a href="https://github.com/alokkkchaudharyyy/agent-bridge"><img src="./metrics/project-agent-bridge.svg" width="49%" alt="Agent Bridge: a VS Code extension that lets AI agents hand tasks to your IDE's AI chat."></a>
 <a href="https://nexeraofficial.in"><img src="./assets/project-nexera-app.svg" width="49%" alt="Nexera App: the NEXERA Flutter app for Android."></a>
