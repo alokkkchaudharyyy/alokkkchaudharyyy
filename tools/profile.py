@@ -308,26 +308,26 @@ def pill_width(text, fs=11, spacing=1.5):
     return 23 + len(text) * (fs * CW + spacing) + 14
 
 
-TILE_W, TILE_H = 490, 280
+TILE_W, TILE_H = 490, 340
+PAD = 34
 
 
 def tile(accent, tag, title, desc, stack, motif, stat="", link=True, defs="", css=""):
-    w, h = TILE_W, TILE_H
-    lines = "".join(f'<tspan x="28" y="{152 + k * 22}">{esc(t)}</tspan>' for k, t in enumerate(desc))
+    w, h, x = TILE_W, TILE_H, PAD
+    lines = "".join(f'<tspan x="{x}" y="{176 + k * 24}">{esc(t)}</tspan>' for k, t in enumerate(desc))
     body = f"""
 <rect width="{w}" height="{h}" fill="url(#tglow)"/>
-{motif}
+<g transform="translate(56 12) scale(.88)">{motif}</g>
 <g class="in">
-  <rect x="28" y="28" width="{pill_width(tag):.0f}" height="24" rx="12" fill="{accent}" fill-opacity=".14" stroke="{accent}" stroke-opacity=".5"/>
-  <circle cx="41" cy="40" r="3.5" fill="{accent}" class="pulse"/>
-  <text x="51" y="44" class="mono" font-size="11" letter-spacing="1.5" fill="{accent}">{esc(tag)}</text>
+  <rect x="{x}" y="{x}" width="{pill_width(tag):.0f}" height="24" rx="12" fill="{accent}" fill-opacity=".14" stroke="{accent}" stroke-opacity=".5"/>
+  <circle cx="{x + 13}" cy="{x + 12}" r="3.5" fill="{accent}" class="pulse"/>
+  <text x="{x + 23}" y="{x + 16}" class="mono" font-size="11" letter-spacing="1.5" fill="{accent}">{esc(tag)}</text>
 </g>
 <g class="in" style="animation-delay:.15s">
-  <text x="27" y="110" class="sans" font-size="30" font-weight="800" letter-spacing="-.5" fill="{FG}">{esc(title)}</text>
+  <text x="{x - 1}" y="124" class="sans" font-size="30" font-weight="800" letter-spacing="-.5" fill="{FG}">{esc(title)}{f'<tspan dx="10" dy="-2" font-size="18" font-weight="400" fill="{accent}">&#8599;</tspan>' if link else ''}</text>
   <text class="sans" font-size="14.5" fill="{FG2}">{lines}</text>
-  {chips(28, h - 62, stack, accent)}
-  {f'<text x="{w - 28}" y="{h - 45}" text-anchor="end" class="mono" font-size="12.5" fill="{FG}">{esc(stat)}</text>' if stat else ''}
-  {f'<text x="{w - 28}" y="44" text-anchor="end" class="mono" font-size="16" fill="{accent}">&#8599;</text>' if link else ''}
+  {chips(x, h - x - 24, stack, accent)}
+  {f'<text x="{w - x}" y="{h - x - 7}" text-anchor="end" class="mono" font-size="12.5" fill="{FG}">{esc(stat)}</text>' if stat else ''}
 </g>"""
     tglow = f'<radialGradient id="tglow" cx="{w * .8:.0f}" cy="40" r="{w * .7:.0f}" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="{accent}" stop-opacity=".16"/><stop offset="1" stop-color="{accent}" stop-opacity="0"/></radialGradient>'
     return svg(w, h, body, tglow + defs, css, accent=accent, comet=(accent, shade(accent, .6)))
@@ -381,11 +381,11 @@ def agent_bridge_tile(version="", installs=None):
     path_go, path_back = "M332 72 H392", "M392 106 H332"
     packets = "".join(
         f'<rect x="-6" y="-4" width="12" height="8" rx="2" fill="{a}" filter="url(#glow)">'
-        f'<animateMotion dur="2.4s" begin="{k * .8}s" repeatCount="indefinite" path="{path_go}"/></rect>'
+        f'<animateMotion dur="2.4s" begin="-{k * .8:.1f}s" repeatCount="indefinite" path="{path_go}"/></rect>'
         for k in range(3)
     )
     acks = "".join(
-        f'<circle r="4" fill="{LIME}"><animateMotion dur="2.4s" begin="{1.2 + k * 1.2}s" repeatCount="indefinite" path="{path_back}"/></circle>'
+        f'<circle r="4" fill="{LIME}"><animateMotion dur="2.4s" begin="-{1.2 + k * 1.2:.1f}s" repeatCount="indefinite" path="{path_back}"/></circle>'
         for k in range(2)
     )
     motif = f"""
