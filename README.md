@@ -19,10 +19,8 @@
 
 <a href="https://alokchaudhary.me"><img src="./assets/project-portfolio.svg" width="49%" alt="World of Alok: my portfolio as an explorable 3D world."></a>
 <a href="https://nexeraofficial.in"><img src="./assets/project-nexera-app.svg" width="49%" alt="Nexera App: the NEXERA Flutter app for Android."></a>
-
 <a href="https://github.com/alokkkchaudharyyy/agent-bridge"><img src="./metrics/project-agent-bridge.svg" width="49%" alt="Agent Bridge: a VS Code extension that lets AI agents hand tasks to your IDE's AI chat."></a>
 <img src="./assets/project-wa-guard.svg" width="49%" alt="WA Spam Guard: a WhatsApp bot that deletes spam links in NEXERA's groups, running 24/7 on a spare Android phone.">
-
 <img src="./assets/project-okeanos.svg" width="49%" alt="Okeanos: reconstructing ocean temperature down to 1000 m from satellite data. SIH 2026.">
 <a href="https://github.com/ArunmehtaBuild/NetWM"><img src="./assets/project-netwm.svg" width="49%" alt="NetWM: forecasting network attacks with a world model. SIH 2026."></a>
 

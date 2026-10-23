@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="490" height="340" viewBox="0 0 490 340" fill="none" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="510" height="300" viewBox="0 0 510 300" fill="none" role="img">
+<svg x="10" y="10" width="490" height="280" viewBox="0 0 490 280">
 <style>
   .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
   .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
@@ -23,7 +24,7 @@
 <defs>
   <linearGradient id="cardbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c0f17"/><stop offset="1" stop-color="#05060a"/></linearGradient>
   <linearGradient id="cometg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#38bdf8"/><stop offset="1" stop-color="#227195"/></linearGradient>
-  <clipPath id="clip"><rect width="490" height="340" rx="16"/></clipPath>
+  <clipPath id="clip"><rect width="490" height="280" rx="16"/></clipPath>
   
   <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="5" result="b"/>
@@ -32,11 +33,11 @@
   <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
   <radialGradient id="tglow" cx="392" cy="40" r="343" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#38bdf8" stop-opacity=".16"/><stop offset="1" stop-color="#38bdf8" stop-opacity="0"/></radialGradient>
 </defs>
-<rect x="0.5" y="0.5" width="489" height="339" rx="16" fill="url(#cardbg)" stroke="#1f2433"/><path d="M14 32 V14 H32" stroke="#38bdf8" stroke-opacity=".6" stroke-width="1.5"/><path d="M476 32 V14 H458" stroke="#38bdf8" stroke-opacity=".6" stroke-width="1.5"/><path d="M14 308 V326 H32" stroke="#38bdf8" stroke-opacity=".6" stroke-width="1.5"/><path d="M476 308 V326 H458" stroke="#38bdf8" stroke-opacity=".6" stroke-width="1.5"/><rect x="1" y="1" width="488" height="338" rx="16" pathLength="1000" fill="none" stroke="url(#cometg)" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 860" filter="url(#glow)"><animate attributeName="stroke-dashoffset" from="1000" to="0" dur="7s" repeatCount="indefinite"/></rect>
+<rect x="0.5" y="0.5" width="489" height="279" rx="16" fill="url(#cardbg)" stroke="#1f2433"/><path d="M14 32 V14 H32" stroke="#38bdf8" stroke-opacity=".6" stroke-width="1.5"/><path d="M476 32 V14 H458" stroke="#38bdf8" stroke-opacity=".6" stroke-width="1.5"/><path d="M14 248 V266 H32" stroke="#38bdf8" stroke-opacity=".6" stroke-width="1.5"/><path d="M476 248 V266 H458" stroke="#38bdf8" stroke-opacity=".6" stroke-width="1.5"/><rect x="1" y="1" width="488" height="278" rx="16" pathLength="1000" fill="none" stroke="url(#cometg)" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 860" filter="url(#glow)"><animate attributeName="stroke-dashoffset" from="1000" to="0" dur="7s" repeatCount="indefinite"/></rect>
 <g clip-path="url(#clip)">
 
-<rect width="490" height="340" fill="url(#tglow)"/>
-<g transform="translate(56 12) scale(.88)">
+<rect width="490" height="280" fill="url(#tglow)"/>
+
 <g class="in" style="animation-delay:.2s">
   <clipPath id="sea"><rect x="236" y="50" width="196" height="76" rx="8"/></clipPath>
   <g clip-path="url(#sea)">
@@ -51,17 +52,18 @@
     <rect x="306" y="27" width="20" height="6" fill="#38bdf8"/><rect x="358" y="27" width="20" height="6" fill="#38bdf8"/>
     <path d="M342 38 L316 58 M342 38 L368 58" stroke="#38bdf8" stroke-opacity=".5" stroke-dasharray="2 3" class="pulse"/>
   </g>
-</g></g>
+</g>
 <g class="in">
-  <rect x="34" y="34" width="158" height="24" rx="12" fill="#38bdf8" fill-opacity=".14" stroke="#38bdf8" stroke-opacity=".5"/>
-  <circle cx="47" cy="46" r="3.5" fill="#38bdf8" class="pulse"/>
-  <text x="57" y="50" class="mono" font-size="11" letter-spacing="1.5" fill="#38bdf8">SIH 2026 · TEAM</text>
+  <rect x="28" y="28" width="158" height="24" rx="12" fill="#38bdf8" fill-opacity=".14" stroke="#38bdf8" stroke-opacity=".5"/>
+  <circle cx="41" cy="40" r="3.5" fill="#38bdf8" class="pulse"/>
+  <text x="51" y="44" class="mono" font-size="11" letter-spacing="1.5" fill="#38bdf8">SIH 2026 · TEAM</text>
 </g>
 <g class="in" style="animation-delay:.15s">
-  <text x="33" y="124" class="sans" font-size="30" font-weight="800" letter-spacing="-.5" fill="#eef2f8">Okeanos</text>
-  <text class="sans" font-size="14.5" fill="#9aa4b5"><tspan x="34" y="176">Rebuilds the North Indian Ocean's temperature</tspan><tspan x="34" y="200">down to 1000 m from satellite surface data alone.</tspan></text>
-  <rect x="34.0" y="282" width="65.2" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="45.0" y="298" class="mono" font-size="12" fill="#38bdf8">Python</text><rect x="107.2" y="282" width="72.4" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="118.2" y="298" class="mono" font-size="12" fill="#38bdf8">PyTorch</text><rect x="187.6" y="282" width="72.4" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="198.6" y="298" class="mono" font-size="12" fill="#38bdf8">XGBoost</text>
+  <text x="27" y="110" class="sans" font-size="30" font-weight="800" letter-spacing="-.5" fill="#eef2f8">Okeanos</text>
+  <text class="sans" font-size="14.5" fill="#9aa4b5"><tspan x="28" y="152">Rebuilds the North Indian Ocean's temperature</tspan><tspan x="28" y="174">down to 1000 m from satellite surface data alone.</tspan></text>
+  <rect x="28.0" y="218" width="65.2" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="39.0" y="234" class="mono" font-size="12" fill="#38bdf8">Python</text><rect x="101.2" y="218" width="72.4" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="112.2" y="234" class="mono" font-size="12" fill="#38bdf8">PyTorch</text><rect x="181.6" y="218" width="72.4" height="24" rx="12" fill="#38bdf8" fill-opacity=".1" stroke="#38bdf8" stroke-opacity=".4"/><text x="192.6" y="234" class="mono" font-size="12" fill="#38bdf8">XGBoost</text>
   
 </g>
 </g>
+</svg>
 </svg>
