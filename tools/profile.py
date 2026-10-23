@@ -308,8 +308,12 @@ def pill_width(text, fs=11, spacing=1.5):
     return 23 + len(text) * (fs * CW + spacing) + 14
 
 
-def tile(w, h, accent, tag, title, meta, desc, stack, motif, stat="", link=True, defs="", css=""):
-    lines = "".join(f'<tspan x="28" y="{206 + k * 22}">{esc(t)}</tspan>' for k, t in enumerate(desc))
+TILE_W, TILE_H = 490, 280
+
+
+def tile(accent, tag, title, desc, stack, motif, stat="", link=True, defs="", css=""):
+    w, h = TILE_W, TILE_H
+    lines = "".join(f'<tspan x="28" y="{152 + k * 22}">{esc(t)}</tspan>' for k, t in enumerate(desc))
     body = f"""
 <rect width="{w}" height="{h}" fill="url(#tglow)"/>
 {motif}
@@ -319,9 +323,7 @@ def tile(w, h, accent, tag, title, meta, desc, stack, motif, stat="", link=True,
   <text x="51" y="44" class="mono" font-size="11" letter-spacing="1.5" fill="{accent}">{esc(tag)}</text>
 </g>
 <g class="in" style="animation-delay:.15s">
-  <text x="27" y="112" class="sans" font-size="30" font-weight="800" letter-spacing="-.5" fill="{FG}">{esc(title)}</text>
-  <rect x="28" y="126" width="36" height="3" rx="1.5" fill="{accent}"/>
-  <text x="28" y="154" class="mono" font-size="12" letter-spacing="1" fill="{FG3}">{esc(meta)}</text>
+  <text x="27" y="110" class="sans" font-size="30" font-weight="800" letter-spacing="-.5" fill="{FG}">{esc(title)}</text>
   <text class="sans" font-size="14.5" fill="{FG2}">{lines}</text>
   {chips(28, h - 62, stack, accent)}
   {f'<text x="{w - 28}" y="{h - 45}" text-anchor="end" class="mono" font-size="12.5" fill="{FG}">{esc(stat)}</text>' if stat else ''}
@@ -332,68 +334,47 @@ def tile(w, h, accent, tag, title, meta, desc, stack, motif, stat="", link=True,
 
 
 def portfolio_tile():
-    W, H = 1000, 320
-    x0, x1, y0, y1 = 520, 972, 24, 296
+    a = ORANGE
+    # the same dusk valley as the site, drawn small: window x 262..436, y 22..127
+    s, x0, y0 = .385, 262, 22
     ridges = [
         ([(0, 190), (60, 120), (110, 150), (170, 70), (230, 140), (300, 95), (360, 150), (452, 110), (452, 272), (0, 272)], "#3b1d4a"),
         ([(0, 210), (80, 160), (150, 190), (220, 130), (290, 185), (370, 150), (452, 190), (452, 272), (0, 272)], "#2a1236"),
         ([(0, 240), (100, 205), (190, 235), (280, 200), (380, 232), (452, 215), (452, 272), (0, 272)], "#170a20"),
     ]
-    mountains = "".join(
-        f'<polygon points="{pts([(x0 + x, y0 + y) for x, y in r])}" fill="{c}"/>' for r, c in ridges
-    )
+    mountains = "".join(f'<polygon points="{pts(r)}" fill="{c}"/>' for r, c in ridges)
     snow = "".join(
-        f'<polygon points="{pts([(x0 + px, y0 + py), (x0 + px - 16, y0 + py + 22), (x0 + px + 14, y0 + py + 20)])}" fill="#fde7f3" opacity=".85"/>'
+        f'<polygon points="{pts([(px, py), (px - 16, py + 22), (px + 14, py + 20)])}" fill="#fde7f3" opacity=".85"/>'
         for px, py in ((170, 70), (300, 95), (60, 120))
     )
     clouds = "".join(
         f'<g class="drift" style="--d:{-300 - k * 60}px;animation-duration:{26 + k * 9}s;animation-delay:-{k * 7}s">'
-        f'<ellipse cx="{x0 + 80 + k * 150}" cy="{y0 + 60 + k * 18}" rx="{46 - k * 6}" ry="9" fill="#fff" opacity=".12"/>'
-        f'<ellipse cx="{x0 + 110 + k * 150}" cy="{y0 + 54 + k * 18}" rx="{30 - k * 4}" ry="8" fill="#fff" opacity=".1"/></g>'
+        f'<ellipse cx="{80 + k * 150}" cy="{60 + k * 18}" rx="{46 - k * 6}" ry="9" fill="#fff" opacity=".12"/>'
+        f'<ellipse cx="{110 + k * 150}" cy="{54 + k * 18}" rx="{30 - k * 4}" ry="8" fill="#fff" opacity=".1"/></g>'
         for k in range(3)
     )
-    road = f"M{x0 + 30} {y0 + 268} C{x0 + 140} {y0 + 236} {x0 + 210} {y0 + 262} {x0 + 300} {y0 + 236} S{x0 + 420} {y0 + 226} {x0 + 452} {y0 + 230}"
+    road = "M30 268 C140 236 210 262 300 236 S420 226 452 230"
+    ww, wh = 452 * s, 272 * s
     motif = f"""
-<g>
-  <clipPath id="world"><rect x="{x0}" y="{y0}" width="{x1 - x0}" height="{y1 - y0}" rx="14"/></clipPath>
+<g class="in" style="animation-delay:.2s">
+  <clipPath id="world"><rect x="{x0}" y="{y0}" width="{ww:.1f}" height="{wh:.1f}" rx="10"/></clipPath>
   <g clip-path="url(#world)">
-    <rect x="{x0}" y="{y0}" width="{x1 - x0}" height="{y1 - y0}" fill="url(#dusk)"/>
-    <circle cx="{x0 + 330}" cy="{y0 + 120}" r="40" fill="url(#psun)" opacity=".95"/>
-    <circle cx="{x0 + 330}" cy="{y0 + 120}" r="60" fill="{ORANGE}" opacity=".25" filter="url(#soft)"/>
-    {clouds}
-    {mountains}{snow}
-    <path d="{road}" stroke="{AMBER}" stroke-opacity=".55" stroke-width="2" stroke-dasharray="6 6"/>
-    <circle r="5" fill="{AMBER}" filter="url(#glow)"><animateMotion dur="7s" repeatCount="indefinite" path="{road}" rotate="auto"/></circle>
+    <g transform="translate({x0} {y0}) scale({s})">
+      <rect width="452" height="272" fill="url(#dusk)"/>
+      <circle cx="330" cy="120" r="40" fill="url(#psun)" opacity=".95"/>
+      {clouds}{mountains}{snow}
+      <path d="{road}" stroke="{AMBER}" stroke-opacity=".6" stroke-width="4" stroke-dasharray="12 12"/>
+      <circle r="11" fill="{AMBER}" filter="url(#glow)"><animateMotion dur="7s" repeatCount="indefinite" path="{road}"/></circle>
+    </g>
   </g>
-  <rect x="{x0}" y="{y0}" width="{x1 - x0}" height="{y1 - y0}" rx="14" stroke="{ORANGE}" stroke-opacity=".35"/>
+  <rect x="{x0}" y="{y0}" width="{ww:.1f}" height="{wh:.1f}" rx="10" stroke="{a}" stroke-opacity=".4"/>
 </g>"""
     defs = f"""
   <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1035"/><stop offset=".6" stop-color="#6b2147"/><stop offset="1" stop-color="#c2410c"/></linearGradient>
   <linearGradient id="psun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="{AMBER}"/><stop offset="1" stop-color="{PINK}"/></linearGradient>"""
-    body_tag = "LIVE · 3D PORTFOLIO"
-    lines = "".join(f'<tspan x="40" y="{184 + k * 22}">{esc(t)}</tspan>' for k, t in enumerate([
-        "My portfolio as an explorable 3D world, set in a",
-        "Himalayan valley. Projects, lab, career and",
-        "achievements, every part of it in 3D.",
-    ]))
-    body = f"""
-<rect width="{W}" height="{H}" fill="url(#tglow)"/>
-{motif}
-<g class="in">
-  <rect x="40" y="40" width="{pill_width(body_tag):.0f}" height="24" rx="12" fill="{ORANGE}" fill-opacity=".14" stroke="{ORANGE}" stroke-opacity=".5"/>
-  <circle cx="53" cy="52" r="3.5" fill="{ORANGE}" class="pulse"/>
-  <text x="63" y="56" class="mono" font-size="11" letter-spacing="1.5" fill="{ORANGE}">{esc(body_tag)}</text>
-  <text x="38" y="138" class="sans" font-size="44" font-weight="800" letter-spacing="-1" fill="url(#ptitle)">World of Alok</text>
-  <text class="sans" font-size="15.5" fill="{FG2}">{lines}</text>
-  {chips(40, 262, ["Three.js", "Next.js 16", "WebGL"], ORANGE)}
-  <rect x="306" y="258" width="176" height="32" rx="16" fill="{ORANGE}"/>
-  <text x="394" y="279" text-anchor="middle" class="mono" font-size="13" font-weight="700" fill="#1a0800">Explore it &#8599;</text>
-</g>"""
-    defs += f"""
-  <radialGradient id="tglow" cx="300" cy="60" r="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="{ORANGE}" stop-opacity=".12"/><stop offset="1" stop-color="{ORANGE}" stop-opacity="0"/></radialGradient>
-  <linearGradient id="ptitle" x1="0" x2="1"><stop offset="0" stop-color="{AMBER}"/><stop offset="1" stop-color="{PINK}"/></linearGradient>"""
-    return svg(W, H, body, defs, accent=ORANGE, comet=(AMBER, PINK))
-
+    return tile(a, "LIVE · 3D PORTFOLIO", "World of Alok",
+                ["My portfolio as a 3D world in a Himalayan valley.", "Walk through projects, lab, career and wins."],
+                ["Three.js", "Next.js 16", "WebGL"], motif, defs=defs)
 
 def agent_bridge_tile(version="", installs=None):
     a = VIOLET
@@ -422,7 +403,7 @@ def agent_bridge_tile(version="", installs=None):
   {packets}{acks}
 </g>"""
     stat = f"v{version} · {installs:,} installs" if installs else ""
-    return tile(490, 330, a, "VS CODE EXTENSION", "Agent Bridge", "Open VSX · MIT",
+    return tile(a, "VS CODE EXTENSION", "Agent Bridge",
                 ["Lets Claude Code or any AI agent hand tasks to", "your IDE's AI chat, and know when they're done."],
                 ["JavaScript", "VS Code API"], motif, stat)
 
@@ -436,23 +417,22 @@ def nexera_app_tile():
         for k, c in enumerate([AMBER, "#a78bfa", "#fb923c", CYAN, AMBER, PINK, "#a78bfa", "#fb923c"])
     )
     motif = f"""
-<g class="bob" style="animation-duration:7s">
+<g transform="translate(140 6) scale(.72)"><g class="bob" style="animation-duration:7s">
   <rect x="324" y="26" width="92" height="150" rx="16" fill="#0d0a04" stroke="{a}" stroke-opacity=".7" stroke-width="1.5"/>
   <rect x="356" y="32" width="28" height="5" rx="2.5" fill="{a}" fill-opacity=".5"/>
   <clipPath id="screen"><rect x="332" y="44" width="76" height="124" rx="8"/></clipPath>
   <g clip-path="url(#screen)">
     <g>{cards}<animateTransform attributeName="transform" type="translate" values="0 0;0 -120" dur="6s" repeatCount="indefinite"/></g>
   </g>
-</g>
-<ellipse cx="370" cy="196" rx="60" ry="8" fill="{a}" opacity=".2" filter="url(#soft)"/>"""
-    return tile(490, 330, a, "FLUTTER · ANDROID", "Nexera App", "Google Play · APK",
+</g></g>"""
+    return tile(a, "FLUTTER · ANDROID", "Nexera App",
                 ["The NEXERA mobile app: IPUNEX notes and PYQs,", "video courses, SkillX DSA practice and doubts."],
                 ["Flutter", "Dart", "Android"], motif)
 
 
 def okeanos_tile():
     a = SKY
-    x0, y0, w, h = 236, 64, 196, 104
+    x0, y0, w, h = 236, 60, 196, 66
     bands = ["#fb923c", "#f59e0b", "#14b8a6", "#0891b2", "#0369a1", "#0c4a6e", "#082f49"]
     layer = "".join(
         f'<rect x="{x0}" y="{y0 + k * h / len(bands):.1f}" width="{w}" height="{h / len(bands) + .5:.1f}" fill="{c}" opacity=".85"/>'
@@ -478,7 +458,7 @@ def okeanos_tile():
     <path d="M{x0 + 106} 38 L{x0 + 80} {y0 - 2} M{x0 + 106} 38 L{x0 + 132} {y0 - 2}" stroke="{a}" stroke-opacity=".5" stroke-dasharray="2 3" class="pulse"/>
   </g>
 </g>"""
-    return tile(490, 330, a, "SIH 2026 · TEAM", "Okeanos", "SIH26066 · MoES",
+    return tile(a, "SIH 2026 · TEAM", "Okeanos",
                 ["Rebuilds the North Indian Ocean's temperature", "down to 1000 m from satellite surface data alone."],
                 ["Python", "PyTorch", "XGBoost"], motif, link=False)
 
@@ -499,50 +479,39 @@ def netwm_tile():
         for k, (i, j) in enumerate([(0, 1), (2, 3), (3, 5), (4, 6)])
     )
     motif = f'<g class="in" style="animation-delay:.2s">{lines}{flow}{dots}</g>'
-    return tile(490, 330, a, "SIH 2026 · TEAM", "NetWM", "PS 26153 · NTRO",
+    return tile(a, "SIH 2026 · TEAM", "NetWM",
                 ["Forecasts network attacks 5 minutes ahead with a", "world model. PR-AUC 0.677 vs 0.139 baseline."],
                 ["Python", "PyTorch", "FastAPI"], motif)
 
 
 def wa_guard_tile():
     a = "#25d366"  # WhatsApp green, this tile only
-    x0, y0, w, h = 520, 32, 452, 286
-    bx = x0 + 20
+    x0, y0, w, h = 290, 22, 176, 108
+    bx, bw = x0 + 9, 158
 
-    def bubble(y, bh, bw, who, who_col, lines, fill="#111a22", extra=""):
-        text = "".join(f'<tspan x="{bx + 14}" y="{y + 38 + k * 19}">{t}</tspan>' for k, t in enumerate(lines))
+    def bubble(y, who, who_col, body, fill="#111a22"):
         return (
-            f'<rect x="{bx}" y="{y}" width="{bw}" height="{bh}" rx="12" fill="{fill}"/>'
-            f'<text x="{bx + 14}" y="{y + 19}" class="mono" font-size="10.5" fill="{who_col}">{esc(who)}</text>'
-            f'<text class="sans" font-size="13.5" fill="{FG}">{text}</text>{extra}'
+            f'<rect x="{bx}" y="{y}" width="{bw}" height="30" rx="8" fill="{fill}"/>'
+            f'<text x="{bx + 9}" y="{y + 12}" class="mono" font-size="8" fill="{who_col}">{esc(who)}</text>'
+            f'<text x="{bx + 9}" y="{y + 24}" class="sans" font-size="10" fill="{FG}">{body}</text>'
         )
 
-    link = f'<tspan fill="{SKY}" text-decoration="underline">'
-    spam = bubble(150, 66, 300, "+91 98xxx xxx21", FG3,
-                  ["Join fast!! free passes, link here", f'{link}chat.whatsapp.com/Kx7Q9...</tspan>'])
-    kept = bubble(230, 50, 300, "Team Nexera", a, [f'Register: {link}nexera.in/events/hackfest</tspan>'],
-                  extra=f'<rect x="{bx + 316}" y="{230 + 15}" width="62" height="20" rx="10" fill="{a}" fill-opacity=".15" stroke="{a}" stroke-opacity=".5"/>'
-                        f'<text x="{bx + 347}" y="{230 + 29}" text-anchor="middle" class="mono" font-size="10.5" fill="{a}">kept &#10003;</text>')
     motif = f"""
 <g class="in" style="animation-delay:.2s">
-  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="14" fill="#070d0b" stroke="{a}" stroke-opacity=".35"/>
-  <circle cx="{x0 + 34}" cy="{y0 + 24}" r="14" fill="{a}" fill-opacity=".15"/>
-  <path d="M{x0 + 34} {y0 + 15} l7 3 v5 c0 4.5 -3 7.5 -7 9 c-4 -1.5 -7 -4.5 -7 -9 v-5 Z" stroke="{a}" stroke-width="1.6" stroke-linejoin="round"/>
-  <text x="{x0 + 58}" y="{y0 + 22}" class="sans" font-size="14" font-weight="700" fill="{FG}">IPUNEX · Nexera</text>
-  <text x="{x0 + 58}" y="{y0 + 38}" class="mono" font-size="10" fill="{FG3}">guard active · delete-only</text>
-  <circle cx="{x0 + w - 62}" cy="{y0 + 24}" r="4" fill="{a}" class="pulse"/>
-  <text x="{x0 + w - 20}" y="{y0 + 28}" text-anchor="end" class="mono" font-size="11" letter-spacing="1" fill="{a}">LIVE</text>
-  <line x1="{x0}" x2="{x0 + w}" y1="{y0 + 48}" y2="{y0 + 48}" stroke="{a}" stroke-opacity=".2"/>
-  {bubble(92, 48, 260, "Riya", PINK, ["Sem 3 notes are up on the app"])}
-  <g class="wspam" opacity="0">{spam}
-    <rect x="{bx}" y="150" width="300" height="66" rx="12" stroke="{ROSE}" stroke-width="1.5" class="wflag" opacity="0"/>
-    <text x="{bx + 316}" y="187" class="mono wflag" font-size="10.5" fill="{ROSE}" opacity="0">spam link</text>
+  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="10" fill="#070d0b" stroke="{a}" stroke-opacity=".4"/>
+  <path d="M{x0 + 18} {y0 + 8} l6 2.5 v4.5 c0 4 -2.6 6.5 -6 8 c-3.4 -1.5 -6 -4 -6 -8 v-4.5 Z" stroke="{a}" stroke-width="1.4" stroke-linejoin="round"/>
+  <text x="{x0 + 32}" y="{y0 + 19}" class="sans" font-size="11" font-weight="700" fill="{FG}">IPUNEX · Nexera</text>
+  <circle cx="{x0 + w - 14}" cy="{y0 + 15}" r="3" fill="{a}" class="pulse"/>
+  <line x1="{x0}" x2="{x0 + w}" y1="{y0 + 30}" y2="{y0 + 30}" stroke="{a}" stroke-opacity=".2"/>
+  <g class="wspam" opacity="0">
+    {bubble(y0 + 38, "+91 98xxx xxx21", FG3, f'Join!! <tspan fill="{SKY}" text-decoration="underline">chat.whatsapp.com/Kx7</tspan>')}
+    <rect x="{bx}" y="{y0 + 38}" width="{bw}" height="30" rx="8" stroke="{ROSE}" stroke-width="1.3" class="wflag" opacity="0"/>
   </g>
   <g class="wgone" opacity="0">
-    <rect x="{bx}" y="150" width="236" height="40" rx="12" fill="#0d1318" stroke="{FG3}" stroke-opacity=".4" stroke-dasharray="3 3"/>
-    <text x="{bx + 14}" y="175" class="sans" font-size="13" font-style="italic" fill="{FG3}">&#8856; deleted by guard in 4s</text>
+    <rect x="{bx}" y="{y0 + 38}" width="132" height="30" rx="8" stroke="{FG3}" stroke-opacity=".5" stroke-dasharray="3 3"/>
+    <text x="{bx + 9}" y="{y0 + 57}" class="sans" font-size="10" font-style="italic" fill="{FG3}">&#8856; deleted by guard</text>
   </g>
-  <g class="wkept">{kept}</g>
+  <g class="wkept">{bubble(y0 + 72, "Team Nexera", a, f'<tspan fill="{SKY}" text-decoration="underline">nexera.in/events/hackfest</tspan>  <tspan fill="{a}">&#10003;</tspan>')}</g>
 </g>"""
     css = """
   .wspam { animation: wspam 9s infinite; }
@@ -555,12 +524,9 @@ def wa_guard_tile():
   @keyframes wkept { 0%, 60% { opacity: 0; } 66%, 94% { opacity: 1; } 100% { opacity: 0; } }
   @media (prefers-reduced-motion: reduce) { .wgone, .wkept { opacity: 1; } }
 """
-    return tile(1000, 350, a, "WHATSAPP BOT · 24/7", "WA Spam Guard", "Delete-only · 6 per minute cap",
-                ["Keeps NEXERA's WhatsApp groups clean 24/7 from a",
-                 "spare Android phone. Spam and invite links vanish in",
-                 "seconds, while admins, team and Nexera links stay."],
+    return tile(a, "WHATSAPP BOT · 24/7", "WA Spam Guard",
+                ["Clears spam links from NEXERA's WhatsApp groups", "24/7, running on a spare Android phone."],
                 ["Node.js", "Baileys", "Termux"], motif, link=False, css=css)
-
 
 # ------------------------------------------------------------------ NEXERA card (its own brand)
 

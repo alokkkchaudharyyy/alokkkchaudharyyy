@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="320" viewBox="0 0 1000 320" fill="none" role="img">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="490" height="280" viewBox="0 0 490 280" fill="none" role="img">
 <style>
   .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
   .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
@@ -22,47 +22,47 @@
 </style>
 <defs>
   <linearGradient id="cardbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c0f17"/><stop offset="1" stop-color="#05060a"/></linearGradient>
-  <linearGradient id="cometg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#f472b6"/></linearGradient>
-  <clipPath id="clip"><rect width="1000" height="320" rx="16"/></clipPath>
+  <linearGradient id="cometg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="#975824"/></linearGradient>
+  <clipPath id="clip"><rect width="490" height="280" rx="16"/></clipPath>
   
   <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
     <feGaussianBlur stdDeviation="5" result="b"/>
     <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
   </filter>
   <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
-  
+  <radialGradient id="tglow" cx="392" cy="40" r="343" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fb923c" stop-opacity=".16"/><stop offset="1" stop-color="#fb923c" stop-opacity="0"/></radialGradient>
   <linearGradient id="dusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1035"/><stop offset=".6" stop-color="#6b2147"/><stop offset="1" stop-color="#c2410c"/></linearGradient>
   <linearGradient id="psun" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#f472b6"/></linearGradient>
-  <radialGradient id="tglow" cx="300" cy="60" r="600" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fb923c" stop-opacity=".12"/><stop offset="1" stop-color="#fb923c" stop-opacity="0"/></radialGradient>
-  <linearGradient id="ptitle" x1="0" x2="1"><stop offset="0" stop-color="#fbbf24"/><stop offset="1" stop-color="#f472b6"/></linearGradient>
 </defs>
-<rect x="0.5" y="0.5" width="999" height="319" rx="16" fill="url(#cardbg)" stroke="#1f2433"/><path d="M14 32 V14 H32" stroke="#fb923c" stroke-opacity=".6" stroke-width="1.5"/><path d="M986 32 V14 H968" stroke="#fb923c" stroke-opacity=".6" stroke-width="1.5"/><path d="M14 288 V306 H32" stroke="#fb923c" stroke-opacity=".6" stroke-width="1.5"/><path d="M986 288 V306 H968" stroke="#fb923c" stroke-opacity=".6" stroke-width="1.5"/><rect x="1" y="1" width="998" height="318" rx="16" pathLength="1000" fill="none" stroke="url(#cometg)" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 860" filter="url(#glow)"><animate attributeName="stroke-dashoffset" from="1000" to="0" dur="7s" repeatCount="indefinite"/></rect>
+<rect x="0.5" y="0.5" width="489" height="279" rx="16" fill="url(#cardbg)" stroke="#1f2433"/><path d="M14 32 V14 H32" stroke="#fb923c" stroke-opacity=".6" stroke-width="1.5"/><path d="M476 32 V14 H458" stroke="#fb923c" stroke-opacity=".6" stroke-width="1.5"/><path d="M14 248 V266 H32" stroke="#fb923c" stroke-opacity=".6" stroke-width="1.5"/><path d="M476 248 V266 H458" stroke="#fb923c" stroke-opacity=".6" stroke-width="1.5"/><rect x="1" y="1" width="488" height="278" rx="16" pathLength="1000" fill="none" stroke="url(#cometg)" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 860" filter="url(#glow)"><animate attributeName="stroke-dashoffset" from="1000" to="0" dur="7s" repeatCount="indefinite"/></rect>
 <g clip-path="url(#clip)">
 
-<rect width="1000" height="320" fill="url(#tglow)"/>
+<rect width="490" height="280" fill="url(#tglow)"/>
 
-<g>
-  <clipPath id="world"><rect x="520" y="24" width="452" height="272" rx="14"/></clipPath>
+<g class="in" style="animation-delay:.2s">
+  <clipPath id="world"><rect x="262" y="22" width="174.0" height="104.7" rx="10"/></clipPath>
   <g clip-path="url(#world)">
-    <rect x="520" y="24" width="452" height="272" fill="url(#dusk)"/>
-    <circle cx="850" cy="144" r="40" fill="url(#psun)" opacity=".95"/>
-    <circle cx="850" cy="144" r="60" fill="#fb923c" opacity=".25" filter="url(#soft)"/>
-    <g class="drift" style="--d:-300px;animation-duration:26s;animation-delay:-0s"><ellipse cx="600" cy="84" rx="46" ry="9" fill="#fff" opacity=".12"/><ellipse cx="630" cy="78" rx="30" ry="8" fill="#fff" opacity=".1"/></g><g class="drift" style="--d:-360px;animation-duration:35s;animation-delay:-7s"><ellipse cx="750" cy="102" rx="40" ry="9" fill="#fff" opacity=".12"/><ellipse cx="780" cy="96" rx="26" ry="8" fill="#fff" opacity=".1"/></g><g class="drift" style="--d:-420px;animation-duration:44s;animation-delay:-14s"><ellipse cx="900" cy="120" rx="34" ry="9" fill="#fff" opacity=".12"/><ellipse cx="930" cy="114" rx="22" ry="8" fill="#fff" opacity=".1"/></g>
-    <polygon points="520.0,214.0 580.0,144.0 630.0,174.0 690.0,94.0 750.0,164.0 820.0,119.0 880.0,174.0 972.0,134.0 972.0,296.0 520.0,296.0" fill="#3b1d4a"/><polygon points="520.0,234.0 600.0,184.0 670.0,214.0 740.0,154.0 810.0,209.0 890.0,174.0 972.0,214.0 972.0,296.0 520.0,296.0" fill="#2a1236"/><polygon points="520.0,264.0 620.0,229.0 710.0,259.0 800.0,224.0 900.0,256.0 972.0,239.0 972.0,296.0 520.0,296.0" fill="#170a20"/><polygon points="690.0,94.0 674.0,116.0 704.0,114.0" fill="#fde7f3" opacity=".85"/><polygon points="820.0,119.0 804.0,141.0 834.0,139.0" fill="#fde7f3" opacity=".85"/><polygon points="580.0,144.0 564.0,166.0 594.0,164.0" fill="#fde7f3" opacity=".85"/>
-    <path d="M550 292 C660 260 730 286 820 260 S940 250 972 254" stroke="#fbbf24" stroke-opacity=".55" stroke-width="2" stroke-dasharray="6 6"/>
-    <circle r="5" fill="#fbbf24" filter="url(#glow)"><animateMotion dur="7s" repeatCount="indefinite" path="M550 292 C660 260 730 286 820 260 S940 250 972 254" rotate="auto"/></circle>
+    <g transform="translate(262 22) scale(0.385)">
+      <rect width="452" height="272" fill="url(#dusk)"/>
+      <circle cx="330" cy="120" r="40" fill="url(#psun)" opacity=".95"/>
+      <g class="drift" style="--d:-300px;animation-duration:26s;animation-delay:-0s"><ellipse cx="80" cy="60" rx="46" ry="9" fill="#fff" opacity=".12"/><ellipse cx="110" cy="54" rx="30" ry="8" fill="#fff" opacity=".1"/></g><g class="drift" style="--d:-360px;animation-duration:35s;animation-delay:-7s"><ellipse cx="230" cy="78" rx="40" ry="9" fill="#fff" opacity=".12"/><ellipse cx="260" cy="72" rx="26" ry="8" fill="#fff" opacity=".1"/></g><g class="drift" style="--d:-420px;animation-duration:44s;animation-delay:-14s"><ellipse cx="380" cy="96" rx="34" ry="9" fill="#fff" opacity=".12"/><ellipse cx="410" cy="90" rx="22" ry="8" fill="#fff" opacity=".1"/></g><polygon points="0.0,190.0 60.0,120.0 110.0,150.0 170.0,70.0 230.0,140.0 300.0,95.0 360.0,150.0 452.0,110.0 452.0,272.0 0.0,272.0" fill="#3b1d4a"/><polygon points="0.0,210.0 80.0,160.0 150.0,190.0 220.0,130.0 290.0,185.0 370.0,150.0 452.0,190.0 452.0,272.0 0.0,272.0" fill="#2a1236"/><polygon points="0.0,240.0 100.0,205.0 190.0,235.0 280.0,200.0 380.0,232.0 452.0,215.0 452.0,272.0 0.0,272.0" fill="#170a20"/><polygon points="170.0,70.0 154.0,92.0 184.0,90.0" fill="#fde7f3" opacity=".85"/><polygon points="300.0,95.0 284.0,117.0 314.0,115.0" fill="#fde7f3" opacity=".85"/><polygon points="60.0,120.0 44.0,142.0 74.0,140.0" fill="#fde7f3" opacity=".85"/>
+      <path d="M30 268 C140 236 210 262 300 236 S420 226 452 230" stroke="#fbbf24" stroke-opacity=".6" stroke-width="4" stroke-dasharray="12 12"/>
+      <circle r="11" fill="#fbbf24" filter="url(#glow)"><animateMotion dur="7s" repeatCount="indefinite" path="M30 268 C140 236 210 262 300 236 S420 226 452 230"/></circle>
+    </g>
   </g>
-  <rect x="520" y="24" width="452" height="272" rx="14" stroke="#fb923c" stroke-opacity=".35"/>
+  <rect x="262" y="22" width="174.0" height="104.7" rx="10" stroke="#fb923c" stroke-opacity=".4"/>
 </g>
 <g class="in">
-  <rect x="40" y="40" width="191" height="24" rx="12" fill="#fb923c" fill-opacity=".14" stroke="#fb923c" stroke-opacity=".5"/>
-  <circle cx="53" cy="52" r="3.5" fill="#fb923c" class="pulse"/>
-  <text x="63" y="56" class="mono" font-size="11" letter-spacing="1.5" fill="#fb923c">LIVE · 3D PORTFOLIO</text>
-  <text x="38" y="138" class="sans" font-size="44" font-weight="800" letter-spacing="-1" fill="url(#ptitle)">World of Alok</text>
-  <text class="sans" font-size="15.5" fill="#9aa4b5"><tspan x="40" y="184">My portfolio as an explorable 3D world, set in a</tspan><tspan x="40" y="206">Himalayan valley. Projects, lab, career and</tspan><tspan x="40" y="228">achievements, every part of it in 3D.</tspan></text>
-  <rect x="40.0" y="262" width="79.6" height="24" rx="12" fill="#fb923c" fill-opacity=".1" stroke="#fb923c" stroke-opacity=".4"/><text x="51.0" y="278" class="mono" font-size="12" fill="#fb923c">Three.js</text><rect x="127.6" y="262" width="94.0" height="24" rx="12" fill="#fb923c" fill-opacity=".1" stroke="#fb923c" stroke-opacity=".4"/><text x="138.6" y="278" class="mono" font-size="12" fill="#fb923c">Next.js 16</text><rect x="229.6" y="262" width="58.0" height="24" rx="12" fill="#fb923c" fill-opacity=".1" stroke="#fb923c" stroke-opacity=".4"/><text x="240.6" y="278" class="mono" font-size="12" fill="#fb923c">WebGL</text>
-  <rect x="306" y="258" width="176" height="32" rx="16" fill="#fb923c"/>
-  <text x="394" y="279" text-anchor="middle" class="mono" font-size="13" font-weight="700" fill="#1a0800">Explore it &#8599;</text>
+  <rect x="28" y="28" width="191" height="24" rx="12" fill="#fb923c" fill-opacity=".14" stroke="#fb923c" stroke-opacity=".5"/>
+  <circle cx="41" cy="40" r="3.5" fill="#fb923c" class="pulse"/>
+  <text x="51" y="44" class="mono" font-size="11" letter-spacing="1.5" fill="#fb923c">LIVE · 3D PORTFOLIO</text>
+</g>
+<g class="in" style="animation-delay:.15s">
+  <text x="27" y="110" class="sans" font-size="30" font-weight="800" letter-spacing="-.5" fill="#eef2f8">World of Alok</text>
+  <text class="sans" font-size="14.5" fill="#9aa4b5"><tspan x="28" y="152">My portfolio as a 3D world in a Himalayan valley.</tspan><tspan x="28" y="174">Walk through projects, lab, career and wins.</tspan></text>
+  <rect x="28.0" y="218" width="79.6" height="24" rx="12" fill="#fb923c" fill-opacity=".1" stroke="#fb923c" stroke-opacity=".4"/><text x="39.0" y="234" class="mono" font-size="12" fill="#fb923c">Three.js</text><rect x="115.6" y="218" width="94.0" height="24" rx="12" fill="#fb923c" fill-opacity=".1" stroke="#fb923c" stroke-opacity=".4"/><text x="126.6" y="234" class="mono" font-size="12" fill="#fb923c">Next.js 16</text><rect x="217.6" y="218" width="58.0" height="24" rx="12" fill="#fb923c" fill-opacity=".1" stroke="#fb923c" stroke-opacity=".4"/><text x="228.6" y="234" class="mono" font-size="12" fill="#fb923c">WebGL</text>
+  
+  <text x="462" y="44" text-anchor="end" class="mono" font-size="16" fill="#fb923c">&#8599;</text>
 </g>
 </g>
 </svg>
