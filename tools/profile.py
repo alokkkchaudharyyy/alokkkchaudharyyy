@@ -504,6 +504,64 @@ def netwm_tile():
                 ["Python", "PyTorch", "FastAPI"], motif)
 
 
+def wa_guard_tile():
+    a = "#25d366"  # WhatsApp green, this tile only
+    x0, y0, w, h = 520, 32, 452, 286
+    bx = x0 + 20
+
+    def bubble(y, bh, bw, who, who_col, lines, fill="#111a22", extra=""):
+        text = "".join(f'<tspan x="{bx + 14}" y="{y + 38 + k * 19}">{t}</tspan>' for k, t in enumerate(lines))
+        return (
+            f'<rect x="{bx}" y="{y}" width="{bw}" height="{bh}" rx="12" fill="{fill}"/>'
+            f'<text x="{bx + 14}" y="{y + 19}" class="mono" font-size="10.5" fill="{who_col}">{esc(who)}</text>'
+            f'<text class="sans" font-size="13.5" fill="{FG}">{text}</text>{extra}'
+        )
+
+    link = f'<tspan fill="{SKY}" text-decoration="underline">'
+    spam = bubble(150, 66, 300, "+91 98xxx xxx21", FG3,
+                  ["Join fast!! free passes, link here", f'{link}chat.whatsapp.com/Kx7Q9...</tspan>'])
+    kept = bubble(230, 50, 300, "Team Nexera", a, [f'Register: {link}nexera.in/events/hackfest</tspan>'],
+                  extra=f'<rect x="{bx + 316}" y="{230 + 15}" width="62" height="20" rx="10" fill="{a}" fill-opacity=".15" stroke="{a}" stroke-opacity=".5"/>'
+                        f'<text x="{bx + 347}" y="{230 + 29}" text-anchor="middle" class="mono" font-size="10.5" fill="{a}">kept &#10003;</text>')
+    motif = f"""
+<g class="in" style="animation-delay:.2s">
+  <rect x="{x0}" y="{y0}" width="{w}" height="{h}" rx="14" fill="#070d0b" stroke="{a}" stroke-opacity=".35"/>
+  <circle cx="{x0 + 34}" cy="{y0 + 24}" r="14" fill="{a}" fill-opacity=".15"/>
+  <path d="M{x0 + 34} {y0 + 15} l7 3 v5 c0 4.5 -3 7.5 -7 9 c-4 -1.5 -7 -4.5 -7 -9 v-5 Z" stroke="{a}" stroke-width="1.6" stroke-linejoin="round"/>
+  <text x="{x0 + 58}" y="{y0 + 22}" class="sans" font-size="14" font-weight="700" fill="{FG}">IPUNEX · Nexera</text>
+  <text x="{x0 + 58}" y="{y0 + 38}" class="mono" font-size="10" fill="{FG3}">guard active · delete-only</text>
+  <circle cx="{x0 + w - 62}" cy="{y0 + 24}" r="4" fill="{a}" class="pulse"/>
+  <text x="{x0 + w - 20}" y="{y0 + 28}" text-anchor="end" class="mono" font-size="11" letter-spacing="1" fill="{a}">LIVE</text>
+  <line x1="{x0}" x2="{x0 + w}" y1="{y0 + 48}" y2="{y0 + 48}" stroke="{a}" stroke-opacity=".2"/>
+  {bubble(92, 48, 260, "Riya", PINK, ["Sem 3 notes are up on the app"])}
+  <g class="wspam" opacity="0">{spam}
+    <rect x="{bx}" y="150" width="300" height="66" rx="12" stroke="{ROSE}" stroke-width="1.5" class="wflag" opacity="0"/>
+    <text x="{bx + 316}" y="187" class="mono wflag" font-size="10.5" fill="{ROSE}" opacity="0">spam link</text>
+  </g>
+  <g class="wgone" opacity="0">
+    <rect x="{bx}" y="150" width="236" height="40" rx="12" fill="#0d1318" stroke="{FG3}" stroke-opacity=".4" stroke-dasharray="3 3"/>
+    <text x="{bx + 14}" y="175" class="sans" font-size="13" font-style="italic" fill="{FG3}">&#8856; deleted by guard in 4s</text>
+  </g>
+  <g class="wkept">{kept}</g>
+</g>"""
+    css = """
+  .wspam { animation: wspam 9s infinite; }
+  .wflag { animation: wflag 9s infinite; }
+  .wgone { animation: wgone 9s infinite; }
+  .wkept { animation: wkept 9s infinite; }
+  @keyframes wspam { 0%, 8% { opacity: 0; } 14%, 44% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  @keyframes wflag { 0%, 26% { opacity: 0; } 30%, 36% { opacity: 1; } 39% { opacity: .3; } 42%, 100% { opacity: 1; } }
+  @keyframes wgone { 0%, 48% { opacity: 0; } 54%, 94% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes wkept { 0%, 60% { opacity: 0; } 66%, 94% { opacity: 1; } 100% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .wgone, .wkept { opacity: 1; } }
+"""
+    return tile(1000, 350, a, "WHATSAPP BOT · 24/7", "WA Spam Guard", "Delete-only · 6 per minute cap",
+                ["Keeps NEXERA's WhatsApp groups clean 24/7 from a",
+                 "spare Android phone. Spam and invite links vanish in",
+                 "seconds, while admins, team and Nexera links stay."],
+                ["Node.js", "Baileys", "Termux"], motif, link=False, css=css)
+
+
 # ------------------------------------------------------------------ NEXERA card (its own brand)
 
 ICONS = {
@@ -619,6 +677,7 @@ def build_static():
     write(ASSETS / "project-nexera-app.svg", nexera_app_tile())
     write(ASSETS / "project-okeanos.svg", okeanos_tile())
     write(ASSETS / "project-netwm.svg", netwm_tile())
+    write(ASSETS / "project-wa-guard.svg", wa_guard_tile())
     write(ASSETS / "nexera.svg", nexera())
     write(ASSETS / "header-stack.svg", header("04", "TECH ARSENAL", "tools I build with every day"))
     write(ASSETS / "header-snake.svg", header("06", "COMMIT SNAKE", "eats my contributions, redrawn daily", PINK))

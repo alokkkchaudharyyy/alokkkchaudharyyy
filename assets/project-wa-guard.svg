@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1000" height="350" viewBox="0 0 1000 350" fill="none" role="img">
+<style>
+  .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; }
+  .mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }
+  .in { animation: fadein .8s cubic-bezier(.2,.8,.2,1) both; }
+  .rise { animation: rise .9s cubic-bezier(.2,.8,.2,1) both; }
+  .blink { animation: blink 1s steps(1) infinite; }
+  .pulse { animation: pulse 2.4s ease-in-out infinite; }
+  .ping { animation: ping 2.2s cubic-bezier(0,0,.2,1) infinite; transform-box: fill-box; transform-origin: center; }
+  .bob { animation: bob 6s ease-in-out infinite; }
+  .twinkle { animation: twinkle 3s ease-in-out infinite; }
+  .drift { animation: drift linear infinite; }
+  @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @keyframes rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+  @keyframes blink { 50% { opacity: 0; } }
+  @keyframes pulse { 0%, 100% { opacity: .4; } 50% { opacity: 1; } }
+  @keyframes ping { 0% { transform: scale(1); opacity: .7; } 80%, 100% { transform: scale(3); opacity: 0; } }
+  @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+  @keyframes twinkle { 0%, 100% { opacity: .15; } 50% { opacity: .9; } }
+  @keyframes drift { from { transform: translateX(0); } to { transform: translateX(var(--d, -200px)); } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+
+  .wspam { animation: wspam 9s infinite; }
+  .wflag { animation: wflag 9s infinite; }
+  .wgone { animation: wgone 9s infinite; }
+  .wkept { animation: wkept 9s infinite; }
+  @keyframes wspam { 0%, 8% { opacity: 0; } 14%, 44% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  @keyframes wflag { 0%, 26% { opacity: 0; } 30%, 36% { opacity: 1; } 39% { opacity: .3; } 42%, 100% { opacity: 1; } }
+  @keyframes wgone { 0%, 48% { opacity: 0; } 54%, 94% { opacity: 1; } 100% { opacity: 0; } }
+  @keyframes wkept { 0%, 60% { opacity: 0; } 66%, 94% { opacity: 1; } 100% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .wgone, .wkept { opacity: 1; } }
+</style>
+<defs>
+  <linearGradient id="cardbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c0f17"/><stop offset="1" stop-color="#05060a"/></linearGradient>
+  <linearGradient id="cometg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#25d366"/><stop offset="1" stop-color="#167f3d"/></linearGradient>
+  <clipPath id="clip"><rect width="1000" height="350" rx="16"/></clipPath>
+  
+  <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="5" result="b"/>
+    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+  <radialGradient id="tglow" cx="800" cy="40" r="700" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#25d366" stop-opacity=".16"/><stop offset="1" stop-color="#25d366" stop-opacity="0"/></radialGradient>
+</defs>
+<rect x="0.5" y="0.5" width="999" height="349" rx="16" fill="url(#cardbg)" stroke="#1f2433"/><path d="M14 32 V14 H32" stroke="#25d366" stroke-opacity=".6" stroke-width="1.5"/><path d="M986 32 V14 H968" stroke="#25d366" stroke-opacity=".6" stroke-width="1.5"/><path d="M14 318 V336 H32" stroke="#25d366" stroke-opacity=".6" stroke-width="1.5"/><path d="M986 318 V336 H968" stroke="#25d366" stroke-opacity=".6" stroke-width="1.5"/><rect x="1" y="1" width="998" height="348" rx="16" pathLength="1000" fill="none" stroke="url(#cometg)" stroke-width="2" stroke-linecap="round" stroke-dasharray="140 860" filter="url(#glow)"><animate attributeName="stroke-dashoffset" from="1000" to="0" dur="7s" repeatCount="indefinite"/></rect>
+<g clip-path="url(#clip)">
+
+<rect width="1000" height="350" fill="url(#tglow)"/>
+
+<g class="in" style="animation-delay:.2s">
+  <rect x="520" y="32" width="452" height="286" rx="14" fill="#070d0b" stroke="#25d366" stroke-opacity=".35"/>
+  <circle cx="554" cy="56" r="14" fill="#25d366" fill-opacity=".15"/>
+  <path d="M554 47 l7 3 v5 c0 4.5 -3 7.5 -7 9 c-4 -1.5 -7 -4.5 -7 -9 v-5 Z" stroke="#25d366" stroke-width="1.6" stroke-linejoin="round"/>
+  <text x="578" y="54" class="sans" font-size="14" font-weight="700" fill="#eef2f8">IPUNEX · Nexera</text>
+  <text x="578" y="70" class="mono" font-size="10" fill="#5f6b7d">guard active · delete-only</text>
+  <circle cx="910" cy="56" r="4" fill="#25d366" class="pulse"/>
+  <text x="952" y="60" text-anchor="end" class="mono" font-size="11" letter-spacing="1" fill="#25d366">LIVE</text>
+  <line x1="520" x2="972" y1="80" y2="80" stroke="#25d366" stroke-opacity=".2"/>
+  <rect x="540" y="92" width="260" height="48" rx="12" fill="#111a22"/><text x="554" y="111" class="mono" font-size="10.5" fill="#f472b6">Riya</text><text class="sans" font-size="13.5" fill="#eef2f8"><tspan x="554" y="130">Sem 3 notes are up on the app</tspan></text>
+  <g class="wspam" opacity="0"><rect x="540" y="150" width="300" height="66" rx="12" fill="#111a22"/><text x="554" y="169" class="mono" font-size="10.5" fill="#5f6b7d">+91 98xxx xxx21</text><text class="sans" font-size="13.5" fill="#eef2f8"><tspan x="554" y="188">Join fast!! free passes, link here</tspan><tspan x="554" y="207"><tspan fill="#38bdf8" text-decoration="underline">chat.whatsapp.com/Kx7Q9...</tspan></tspan></text>
+    <rect x="540" y="150" width="300" height="66" rx="12" stroke="#fb7185" stroke-width="1.5" class="wflag" opacity="0"/>
+    <text x="856" y="187" class="mono wflag" font-size="10.5" fill="#fb7185" opacity="0">spam link</text>
+  </g>
+  <g class="wgone" opacity="0">
+    <rect x="540" y="150" width="236" height="40" rx="12" fill="#0d1318" stroke="#5f6b7d" stroke-opacity=".4" stroke-dasharray="3 3"/>
+    <text x="554" y="175" class="sans" font-size="13" font-style="italic" fill="#5f6b7d">&#8856; deleted by guard in 4s</text>
+  </g>
+  <g class="wkept"><rect x="540" y="230" width="300" height="50" rx="12" fill="#111a22"/><text x="554" y="249" class="mono" font-size="10.5" fill="#25d366">Team Nexera</text><text class="sans" font-size="13.5" fill="#eef2f8"><tspan x="554" y="268">Register: <tspan fill="#38bdf8" text-decoration="underline">nexera.in/events/hackfest</tspan></tspan></text><rect x="856" y="245" width="62" height="20" rx="10" fill="#25d366" fill-opacity=".15" stroke="#25d366" stroke-opacity=".5"/><text x="887" y="259" text-anchor="middle" class="mono" font-size="10.5" fill="#25d366">kept &#10003;</text></g>
+</g>
+<g class="in">
+  <rect x="28" y="28" width="191" height="24" rx="12" fill="#25d366" fill-opacity=".14" stroke="#25d366" stroke-opacity=".5"/>
+  <circle cx="41" cy="40" r="3.5" fill="#25d366" class="pulse"/>
+  <text x="51" y="44" class="mono" font-size="11" letter-spacing="1.5" fill="#25d366">WHATSAPP BOT · 24/7</text>
+</g>
+<g class="in" style="animation-delay:.15s">
+  <text x="27" y="112" class="sans" font-size="30" font-weight="800" letter-spacing="-.5" fill="#eef2f8">WA Spam Guard</text>
+  <rect x="28" y="126" width="36" height="3" rx="1.5" fill="#25d366"/>
+  <text x="28" y="154" class="mono" font-size="12" letter-spacing="1" fill="#5f6b7d">Delete-only · 6 per minute cap</text>
+  <text class="sans" font-size="14.5" fill="#9aa4b5"><tspan x="28" y="206">Keeps NEXERA's WhatsApp groups clean 24/7 from a</tspan><tspan x="28" y="228">spare Android phone. Spam and invite links vanish in</tspan><tspan x="28" y="250">seconds, while admins, team and Nexera links stay.</tspan></text>
+  <rect x="28.0" y="288" width="72.4" height="24" rx="12" fill="#25d366" fill-opacity=".1" stroke="#25d366" stroke-opacity=".4"/><text x="39.0" y="304" class="mono" font-size="12" fill="#25d366">Node.js</text><rect x="108.4" y="288" width="72.4" height="24" rx="12" fill="#25d366" fill-opacity=".1" stroke="#25d366" stroke-opacity=".4"/><text x="119.4" y="304" class="mono" font-size="12" fill="#25d366">Baileys</text><rect x="188.8" y="288" width="65.2" height="24" rx="12" fill="#25d366" fill-opacity=".1" stroke="#25d366" stroke-opacity=".4"/><text x="199.8" y="304" class="mono" font-size="12" fill="#25d366">Termux</text>
+  
+  
+</g>
+</g>
+</svg>

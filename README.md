@@ -24,6 +24,8 @@
 <img src="./assets/project-okeanos.svg" width="49%" alt="Okeanos: reconstructing ocean temperature down to 1000 m from satellite data. SIH 2026.">
 <a href="https://github.com/ArunmehtaBuild/NetWM"><img src="./assets/project-netwm.svg" width="49%" alt="NetWM: forecasting network attacks with a world model. SIH 2026."></a>
 
+<img src="./assets/project-wa-guard.svg" width="100%" alt="WA Spam Guard: a WhatsApp bot that deletes spam links in NEXERA's groups, running 24/7 on a spare Android phone.">
+
 <br>
 
 <a href="https://nexeraofficial.in"><img src="./assets/nexera.svg" width="100%" alt="NEXERA, my startup. Shaping futures. Education, events and community for college students."></a>
