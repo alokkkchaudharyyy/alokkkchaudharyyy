@@ -60,7 +60,7 @@
   <text x="27" y="110" class="sans" font-size="30" font-weight="800" letter-spacing="-.5" fill="#eef2f8">Agent Bridge<tspan dx="10" dy="-2" font-size="18" font-weight="400" fill="#a78bfa">&#8599;</tspan></text>
   <text class="sans" font-size="14.5" fill="#9aa4b5"><tspan x="28" y="152">Lets Claude Code or any AI agent hand tasks to</tspan><tspan x="28" y="174">your IDE's AI chat, and know when they're done.</tspan></text>
   <rect x="28.0" y="218" width="94.0" height="24" rx="12" fill="#a78bfa" fill-opacity=".1" stroke="#a78bfa" stroke-opacity=".4"/><text x="39.0" y="234" class="mono" font-size="12" fill="#a78bfa">JavaScript</text><rect x="130.0" y="218" width="101.2" height="24" rx="12" fill="#a78bfa" fill-opacity=".1" stroke="#a78bfa" stroke-opacity=".4"/><text x="141.0" y="234" class="mono" font-size="12" fill="#a78bfa">VS Code API</text>
-  <text x="462" y="235" text-anchor="end" class="mono" font-size="12.5" fill="#eef2f8">v0.4.0 · 1,822 installs</text>
+  <text x="462" y="235" text-anchor="end" class="mono" font-size="12.5" fill="#eef2f8">v0.4.0 · 1,860 installs</text>
 </g>
 </g>
 </svg>
